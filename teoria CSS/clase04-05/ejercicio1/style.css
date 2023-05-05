@@ -1,0 +1,7 @@
+.grid-container{
+    display: grid;
+    background-color: rgba(128, 128, 128, 0.438);
+    grid-template-columns: 15% 15% 15% 15% 15% 12%;
+    grid-template-rows: 15% 15% 15% 15% 15% 15% 15;
+}
+
