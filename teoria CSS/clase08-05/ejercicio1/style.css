@@ -1,0 +1,24 @@
+body{
+    display: flex;
+    justify-content: center;
+    background-color: aquamarine;
+}
+
+.div{
+    width: 250px;
+    height: 250px;
+    background-image: url(98.webp);
+    background-size: cover;
+    background-position: center;
+    border: 10px solid black
+}
+
+@media(max-width:768px){
+    body{
+        background-color: purple;
+    }
+
+    .div{
+        border-radius: 50%;
+    }
+}

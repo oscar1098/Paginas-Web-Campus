@@ -1,0 +1,10 @@
+.div{
+    padding: 20px;
+    background-color: yellow;
+}
+
+@media(max-width:768px){
+    .div{
+        display: none;
+    }
+}
