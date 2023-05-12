@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Express Repairs</title>
+    <link rel="stylesheet" href="./estilos.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.3.0/mdb.min.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top bg-body-tertiary" style="background-color: #e3f2fd;">
+        <div class="container-fluid" style="background-color: rgb(208 151 48 / 22%);">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="logo"></div>
+        <a class="navbar-brand" style="font-family: fantasy; font-size: 35px; margin-right: 50px;" href="#">Express repairs</a>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+            <a class="btn btn-outline-secondary" style="border: 0px"  aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+            <a class="btn btn-outline-secondary" style="border: 0px"  aria-current="page" href="#servicios">Servicios</a>
+            </li>
+            <li class="nav-item">
+            <a class="btn btn-outline-secondary" style="border: 0px"  aria-current="page" href="#productos">Productos</a>
+            </li>
+            <li class="nav-item">
+            <a class="btn btn-outline-secondary" style="border: 0px"  aria-current="page" href="#footer">Quienes somos</a>
+            </li>
+        </ul>
+        <form class="d-flex" role="search">
+            <input style="width: 370px;" class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+            <button class="btn btn-outline-secondary" type="submit">Buscar</button>
+        </form>
+        </div>
+    </div>
+    </nav>
+    
+    <nav class="navbar navbar-expand-lg" style="background-color: #e3f2fd;"></nav>
+    <div class="carouser mt-2 pt-2 container-fluid shadow-lg p-3 mb-5 bg-body rounded mt-5 ">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+        <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+    
+        <div class="carousel-inner" style="margin-top: 100px;">
+        <div class="carousel-item active c-item">
+            <img src="./imagenes_net/imagen1.jpg" class="d-block w-100 c-img" alt="...">
+        </div>
+    
+        <div class="carousel-item c-item">
+            <img src="./imagenes_net/imagen2.jpg" class="d-block w-100 c-img" alt="...">
+        </div>
+    
+        <div class="carousel-item c-item">
+            <img src="./imagenes_net/imagen3.jpg" class="d-block w-100 c-img" alt="...">
+        </div>
+        </div>
+        
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true" style="color:transparent"></span>
+        <span class="visually-hidden">Anterior</span>
+        </button>
+    
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true" style="color: transparent;"></span>
+        <span class="visually-hidden">Siguiente</span>
+
+        <br id="servicios">
+        </button>
+    </div>
+    </div>
+    <center>
+        <section class="servicios"> 
+            <div style=" font-family: monospace; background-color: rgba(192, 159, 128, 0.144); height: 40px;"><h2>Conoce nuestros servicios</h2></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col col-xs-4 mt-5">
+                        <div class="card shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 18rem;">
+                            <img src="./imagenes_servicios/Fontaneria/Fontaneria.jpg" class="card-img-top" alt="...">
+                            <div class="card-body" style="display:flex; flex-direction: column; align-items: center; background-color: #69b8ca17;">
+                                <h5 class="card-title" style="border: 1px solid black; padding: 3%; width: 100%; background-color: rgb(255, 255, 255); box-shadow: 0px 0px 5px black;">Fontanería</h5>
+                                <p class="card-text">Mi trabajo consiste en garantizar que su hogar o negocio tenga un suministro constante de agua limpia y que todas las tuberías y accesorios estén en óptimas condiciones.</p>
+                                <a href="PaginaServicios.html" class="btn btn-primary" style="box-shadow: 0px 0px 5px black">Más información</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-xs-4 mt-5">
+                        <div class="card shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 18rem;">
+                            <img src="./imagenes_servicios/Electricidad/electricidad.jpg" class="card-img-top" alt="...">
+                            <div class="card-body" style="display:flex; flex-direction: column; align-items: center; background-color: #69b8ca17;">
+                                <h5 class="card-title" style="border: 1px solid black; padding: 3%; width: 100%; background-color: rgb(255, 255, 255); box-shadow: 0px 0px 5px black;">Electricidad</h5>
+                                <p class="card-text">Mi trabajo consiste en garantizar que su hogar o negocio tenga un suministro constante y seguro de electricidad. Esto incluye la instalación, reparación y mantenimiento.</p>
+                                <a href="PaginaServicios.html" class="btn btn-primary" style="box-shadow: 0px 0px 5px black">Más información</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-xs-4 mt-5">
+                        <div class="card shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 18rem;">
+                            <img src="./imagenes_servicios/Carpinteria/carpinteria.jpg" class="card-img-top" alt="...">
+                            <div class="card-body" style="display:flex; flex-direction: column; align-items: center; background-color: #69b8ca17;">
+                                <h5 class="card-title" style="border: 1px solid black; padding: 3%; width: 100%; background-color: rgb(255, 255, 255); box-shadow: 0px 0px 5px black;">Carpintería</h5>
+                                <p class="card-text">Mi trabajo consiste en diseñar, construir y reparar una amplia variedad de estructuras de madera, desde muebles y gabinetes hasta puertas, ventanas, escritorios entre otros.</p>
+                                <a href="PaginaServicios.html" class="btn btn-primary" style="box-shadow: 0px 0px 5px black">Más información</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col col-xs-4 mt-1">
+                        <div class="card shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 18rem">
+                            <img src="./imagenes_servicios/Acabados/Acabados.jpg" class="card-img-top" alt="...">
+                            <div class="card-body" style="display:flex; flex-direction: column; align-items: center; background-color: #69b8ca17;">
+                                <h5 class="card-title" style="border: 1px solid black; padding: 3%; width: 100%; background-color: rgb(255, 255, 255); box-shadow: 0px 0px 5px black;">Acabados</h5>
+                                <p class="card-text">Mi objetivo es ofrecerle soluciones personalizadas que se ajusten a sus necesidades y presupuesto, para que pueda disfrutar de un espacio con la apariencia y la funcionalidad.</p>
+                                <a href="PaginaServicios.html" class="btn btn-primary" style="box-shadow: 0px 0px 5px black">Más información</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-xs-4 mt-1">
+                        <div class="card shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 18rem; align-items: center;">
+                            <img src="./imagenes_servicios/seguridad/seguridad.jpeg" class="card-img-top" alt="...">
+                            <div class="card-body" style="display:flex; flex-direction: column; align-items: center; background-color: #69b8ca17;" >
+                                <h5 class="card-title" style="border: 1px solid black; padding: 3%; width: 100%; background-color: rgb(255, 255, 255); box-shadow: 0px 0px 5px black;">Seguridad</h5>
+                                <p class="card-text">Ofrezco una amplia variedad de servicios de seguridad del hogar, desde la instalación de sistemas de seguridad, como cámaras de vigilancia, alarmas y sistemas de acceso.</p>
+                                <a href="PaginaServicios.html" class="btn btn-primary" style="box-shadow: 0px 0px 5px black">Más información</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-xs-4 mt-1">
+                        <div class="card shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 18rem;">
+                            <img src="./imagenes_servicios/remodelaciones/remodelacion.jpg" class="card-img-top" alt="...">
+                            <div class="card-body" style="display:flex; flex-direction: column; align-items: center; background-color: #69b8ca17;">
+                                <h5 class="card-title" style="border: 1px solid black; padding: 3%; width: 100%; background-color: rgb(255, 255, 255); box-shadow: 0px 0px 5px black;">Remodelaciones</h5>
+                                <p class="card-text">
+                                    Como especialista en remodelaciones, mi trabajo consiste en brindar soluciones personalizadas para mejorar sus espacios.</p>
+                                    <br id="productos">
+                                <a href="PaginaServicios.html" class="btn btn-primary" style="box-shadow: 0px 0px 5px black">Más información</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="productos"> 
+            <div style=" font-family: monospace; background-color: rgba(192, 159, 128, 0.158); height: 40px;"><h2>Conoce nuestros productos</h2></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col col-xs-4 mt-4">
+                        <div class="card shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 18rem;">
+                            <img src="./imagenes_productos/taladro.jpg" class="card-img-top" alt="...">
+                            <div class="card-body" style="background-color: #ca69691a;">
+                            <h5 class="card-title" style="border: 1px solid black; padding: 3%; width: 100%; background-color: rgb(255, 255, 255); box-shadow: 0px 0px 5px black;">Taladro Percutor</h5>
+                            <p class="card-text">Herramienta eléctrica que combina rotación y percusión para perforar superficies duras.</p>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                            <li class="list-group-item" style="background-color: #c6c6c631;">Valor: 350.000 COP</li>
+                            <li class="list-group-item" style="background-color: #c6c6c631;">Marca: Black and decker</li>
+                            <li class="list-group-item" style="background-color: #c6c6c631;">Modelo: 2023</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col col-xs-4 mt-4">
+                        <div class="card shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 18rem;">
+                            <img src="./imagenes_productos/kitHerramientas_Mesa de trabajo 1.jpg" class="card-img-top" alt="...">
+                            <div class="card-body" style="background-color: #ca69691a;">
+                            <h5 class="card-title" style="border: 1px solid black; padding: 3%; width: 100%; background-color: rgb(255, 255, 255); box-shadow: 0px 0px 5px black;">kit de Herramientas</h5>
+                            <p class="card-text">Un kit de herramientas es un conjunto de herramientas que se venden juntas en un paquete.</p>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                            <li class="list-group-item" style="background-color: #c6c6c631;">Valor: 120.000 COP</li>
+                            <li class="list-group-item" style="background-color: #c6c6c631;">Marca: DeWalt</li>
+                            <li class="list-group-item" style="background-color: #c6c6c631;">Modelo: 2020</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col col-xs-4 mt-4">
+                        <div class="card shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 18rem;">
+                            <img src="./imagenes_productos/pintura_Mesa de trabajo 1.jpg" class="card-img-top" alt="...">
+                            <div class="card-body" style="background-color: #ca69691a;">
+                        <h5 class="card-title" style="border: 1px solid black; padding: 3%; width: 100%; background-color: rgb(255, 255, 255); box-shadow: 0px 0px 5px black;">Pintura</h5>
+                        <p class="card-text">Envase de aproximadamente 3.8 litros que contiene pintura para uso en superficies y demás.</p>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                        <li class="list-group-item" style="background-color: #c6c6c631;">Valor: 40.000 COP</li>
+                        <li class="list-group-item" style="background-color: #c6c6c631;">Marca: Pintuco</li>
+                        <li class="list-group-item" style="background-color: #c6c6c631;">Modelo: Live color (2023)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="row">
+                    <div class="col col-xs-4 mt-4">
+                        <div class="card shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 18rem;">
+                            <img src="./imagenes_productos/metroLaser_Mesa de trabajo 1.jpg" class="card-img-top" alt="...">
+                            <div class="card-body" style="background-color: #ca69691a;">
+                            <h5 class="card-title" style="border: 1px solid black; padding: 3%; width: 100%; background-color: rgb(255, 255, 255); box-shadow: 0px 0px 5px black;">Metro laser</h5>
+                            <p class="card-text">Herramienta de medición que utiliza un rayo láser para medir distancias, alturas y ángulos con precisión.</p>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                            <li class="list-group-item" style="background-color: #c6c6c631;">Valor: 220.000 COP</li>
+                            <li class="list-group-item" style="background-color: #c6c6c631;">Marca: Black and decker</li>
+                            <li class="list-group-item" style="background-color: #c6c6c631;">Modelo: 2022</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col col-xs-4 mt-4">
+                        <div class="card shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 18rem;">
+                            <img src="./imagenes_productos/sierraCircular_Mesa de trabajo 1.jpg" class="card-img-top" alt="...">
+                            <div class="card-body" style="background-color: #ca69691a;">
+                        <h5 class="card-title" style="border: 1px solid black; padding: 3%; width: 100%; background-color: rgb(255, 255, 255); box-shadow: 0px 0px 5px black;">Sierra Circular</h5>
+                        <p class="card-text">Herramienta eléctrica con disco dentado para cortar madera, metal u otros materiales con precisión.</p>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                        <li class="list-group-item" style="background-color: #c6c6c631;">Valor: 630.000 COP</li>
+                        <li class="list-group-item" style="background-color: #c6c6c631;">Marca: Milwaukee</li>
+                        <li class="list-group-item" style="background-color: #c6c6c631;">Modelo: Bosch CS5 120-Volt</li>
+                            </ul>
+                    </div>
+                    </div>
+                    <div class="col col-xs-4 mt-4 mb-5">
+                        <div class="card shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 18rem;">
+                            <img src="./imagenes_productos/cortadora_Mesa de trabajo 1.jpg" class="card-img-top" alt="...">
+                            <div class="card-body" style="background-color: #ca69691a;">
+                            <h5 class="card-title" style="border: 1px solid black; padding: 3%; width: 100%; background-color: rgb(255, 255, 255); box-shadow: 0px 0px 5px black;">Cortadora de Baldosa</h5>
+                            <p class="card-text">Herramienta manual o eléctrica utilizada para cortar baldosas de cerámica, vidrio u otros materiales similares.</p>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                            <li class="list-group-item" style="background-color: #c6c6c631;">Valor: 150.000 COP</li>
+                            <li class="list-group-item" style="background-color: #c6c6c631;">Marca: Corona</li>
+                            <li class="list-group-item" style="background-color: #c6c6c631;">Modelo: Ax 221 ultimate</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </center>
+    
+    <footer class="text-center text-lg-start bg-light text-muted" id="footer"> 
+        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom" style="background-color: rgba(60, 55, 55, 0.314);">
+        <div class="me-5 d-none d-lg-block">
+        <span>Nuestras redes sociales:</span>
+        </div>
+        <div>
+        <a href="https://www.facebook.com/" target="_blank" class="me-4 text-reset" style="text-decoration: none;">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://twitter.com/home?lang=es" target="_blank" class="me-4 text-reset" style="text-decoration: none;">
+            <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.google.com/?hl=es" target="_blank" class="me-4 text-reset" style="text-decoration: none;">
+            <i class="fab fa-google"></i>
+        </a>
+        <a href="https://www.instagram.com/" target="_blank" class="me-4 text-reset" style="text-decoration: none;">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.linkedin.com/feed/" target="_blank" class="me-4 text-reset" style="text-decoration: none;">
+            <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/" target="_blank" class="me-4 text-reset" style="text-decoration: none;">
+            <i class="fab fa-github"></i>
+        </a>
+        </div>
+    </section>
+    <section class="">
+        <div class="container text-center text-md-start mt-5">
+        <div class="row mt-3">
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold mb-4">
+                <i class="fas fa-gem me-3"></i>Express reapairs
+            </h6>
+            <p>
+                En Home Repairs nos preocupamos por hacer de tu hogar el mejor lugar para vivir. 
+                Ofrecemos soluciones rápidas y efectivas para todo tipo de reparaciones en el hogar, desde arreglos eléctricos y de fontanería hasta tareas de carpintería y pintura. 
+                Nuestro equipo de expertos se asegurará de que todo esté en perfecto estado para que puedas disfrutar de tu hogar sin preocupaciones. 
+                En Home Repairs, tu hogar es nuestra prioridad.
+            </p>
+            </div>
+            <!-- Grid column -->
+    
+            <!-- Grid column -->
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">
+                Productos
+            </h6>
+            <p>
+                <a href="#productos" class="text-reset" style="text-decoration: none;" >Taladro Percutor</a>
+            </p>
+            <p>
+                <a href="#productos" class="text-reset" style="text-decoration: none;" >kit de Herramientas</a>
+            </p>
+            <p>
+                <a href="#productos" class="text-reset" style="text-decoration: none;" >Pintura</a>
+            </p>
+            <p>
+                <a href="#productos" class="text-reset" style="text-decoration: none;" >Metro laser</a>
+            </p>
+            <p>
+                <a href="#productos" class="text-reset" style="text-decoration: none;" >Sierra Circular</a>
+            </p>
+            <p>
+                <a href="#productos" class="text-reset" style="text-decoration: none;" >Cortadora de Baldosa</a>
+            </p>
+            </div>
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <h6 class="text-uppercase fw-bold mb-4">
+                Links
+            </h6>
+            <p>
+                <a href="#servicios" class="text-reset" style="text-decoration: none;" >Fontaneria</a>
+            </p>
+            <p>
+                <a href="#servicios" class="text-reset" style="text-decoration: none;" >Electricidad</a>
+            </p>
+            <p>
+                <a href="#servicios" class="text-reset" style="text-decoration: none;" >Carpinteria</a>
+            </p>
+            <p>
+                <a href="#servicios" class="text-reset" style="text-decoration: none;" >Acabados</a>
+            </p>
+            <p>
+                <a href="#servicios" class="text-reset" style="text-decoration: none;" >Seguridad</a>
+            </p>
+            <p>
+                <a href="#servicios" class="text-reset" style="text-decoration: none;" >Remodelaciones</a>
+            </p>
+            </div>
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+            <p><i class="fas fa-home me-3"></i> Km-4, Anillo Vial, Bucaramanga, Santander</p>
+            <p>
+                <i class="fas fa-envelope me-3"></i>
+                expressrepairs@correo.com
+            </p>
+            <p><i class="fas fa-phone me-3"></i> + 01 011 001 01</p>
+            <p><i class="fas fa-print me-3"></i> + 01 110 100 10</p>
+            </div>
+        </div>
+        </div>
+    </section>
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 Copyright:
+        <a class="text-reset fw-bold" href="PaginaHogar.html">expressrepairs.com</a>
+    </div>
+    </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    </body>
+    </html>

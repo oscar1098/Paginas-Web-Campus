@@ -1,0 +1,27 @@
+*{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.logo {
+    width: 150px; 
+    height: 110px; 
+    margin-right: 20px; 
+    background-image: url(./imagenes_servicios/paginaArreglos-01.png); 
+    background-size: cover; 
+    background-position: center;
+}
+
+@media (max-width: 768px) {
+    .logo {
+        width: 90px; 
+    height: 50px;
+    }
+}
+
+.servicios {
+    background-color: rgb(199 199 199 / 24%);
+}
+
+.productos {
+    background-color: rgb(199 199 199 / 24%);
+}
