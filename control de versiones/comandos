@@ -1,0 +1,4 @@
+creacion de una rama -> git branch nombreRama
+ubicarse en la rama -> git checkout nombreRama
+Subir a la rama -> git merge nombreRama
+ver las ramas -> git branch
