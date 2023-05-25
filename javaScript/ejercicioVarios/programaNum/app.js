@@ -15,9 +15,10 @@ while (numero != 0 ){
     if (numero > mayor){
         mayor = numero
     }
-
-    if (numero < menor){
-        menor = numero
+    if(numero != 0){
+        if (numero < menor){
+            menor = numero
+        }
     }
 }
 
