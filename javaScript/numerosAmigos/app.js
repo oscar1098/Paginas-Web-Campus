@@ -1,4 +1,6 @@
-let num,suma;
+let suma,
+    num1 = parseInt(prompt("Ingrese el numero 1")),
+    num2 = parseInt(prompt("Ingrese el numero 2"));
 
 function divisores (numero){
     suma = 0;
@@ -20,8 +22,5 @@ function numAmigos(num1,num2){
         document.write(" No son amigos");
     }
 }
-
-let num1 = parseInt(prompt("Ingrese el numero 1"));
-let num2 = parseInt(prompt("Ingrese el numero 2"));
 
 numAmigos(num1,num2);
