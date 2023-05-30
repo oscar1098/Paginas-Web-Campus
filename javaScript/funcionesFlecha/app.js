@@ -1,11 +1,8 @@
 let sumadorLetra = 0;
-const factorial = (numero) => {
-    let total = 1;
-    for ( let i = 1; i<= numero; i++ ){
-        total *= i;
-    }
-    return total;
-}
+let total = 1;
+
+
+const factorial = (numero) => {for ( let i = 1; i<= numero; i++ ){ total *= i; }return total; }
 
 const combinatoria = (n,r) => factorial(n)/(factorial(n-r) * factorial(r));
 
