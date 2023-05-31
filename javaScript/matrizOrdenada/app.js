@@ -31,7 +31,7 @@ const matrizOrdenada = (tamañoMatriz) => {
     
 }
 
-console.log(matrizOrdenada(5));
+console.log(matrizOrdenada(4));
 
 
 
