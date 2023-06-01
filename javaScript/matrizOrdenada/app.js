@@ -22,7 +22,8 @@ const matrizOrdenada = (tamañoMatriz) => {
         
         indiceFinal = indiceInicial + tamañoMatriz;
 
-        ( i % 2 === 0 ) ? matrizFinal.push( arregloTotal.slice( indiceInicial, indiceFinal ).reverse()) : matrizFinal.push(arregloTotal.slice( indiceInicial, indiceFinal ) ); 
+        ( i % 2 === 0 ) ? matrizFinal.push( arregloTotal.slice( indiceInicial, indiceFinal ).reverse()) 
+                        : matrizFinal.push(arregloTotal.slice( indiceInicial, indiceFinal ) ); 
 
         indiceInicial = indiceFinal;
     }
@@ -30,8 +31,7 @@ const matrizOrdenada = (tamañoMatriz) => {
     return matrizFinal;
     
 }
-
-console.log(matrizOrdenada(4));
+console.log(matrizOrdenada(10));
 
 
 
