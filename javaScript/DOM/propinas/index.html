@@ -3,16 +3,22 @@
 <head>
   <title>Calculadora de Propinas</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
 <body>
-  <h1>Calculadora de Propinas</h1>
+  <h1 >Calculadora de Propinas</h1>
   
   <form id="calculator-form">
-    <label for="bill">Monto de la cuenta:</label>
-    <input type="number" id="bill" required>
+    <!-- <div class="mb-3 mt-3"> -->
+      <label class="form-label" for="bill">Monto de la cuenta:</label>
+      <input class="form-control w-25" type="number" id="bill" required>
+    <!-- </div> -->
+
+    <label for="nmroPersonas">Numero de personas:</label>
+    <input type="number" id="nmroPersonas" required>
     
     <label for="tip">Porcentaje de propina:</label>
-    <select id="tip">
+    <select class="form-select" aria-label="Default select example">
       <option value="0.1">10%</option>
       <option value="0.15">15%</option>
       <option value="0.2">20%</option>
@@ -22,14 +28,15 @@
     <button type="submit">Calcular</button>
   </form>
 
-  <div id="result" class="hidden">
+  <div id="result" class="hiddenn">
     <p>Monto de la cuenta: <span id="bill-amount"></span></p>
     <p>Porcentaje de propina: <span id="tip-percentage"></span></p>
     <p>Propina: <span id="tip-amount"></span></p>
-    <p>Total a pagar: <span id="total-amount"></span></p>
+    <p>Total a pagar por persona :<span id="total-amount"></span></p>
   </div>
-
+  
   <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
 </html>
  

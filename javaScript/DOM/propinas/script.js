@@ -6,7 +6,8 @@ const form = document.getElementById('calculator-form'),
       billAmountSpan = document.getElementById('bill-amount'),
       tipPercentageSpan = document.getElementById('tip-percentage'),
       tipAmountSpan = document.getElementById('tip-amount'),
-      totalAmountSpan = document.getElementById('total-amount');
+      totalAmountSpan = document.getElementById('total-amount'),
+      nmroPersonas = document.querySelector('#nmroPersonas');
 
 // Escuchar el evento 'submit' del formulario
 form.addEventListener('submit', function(event) {
@@ -20,7 +21,7 @@ form.addEventListener('submit', function(event) {
 
   // Calcular la propina y el monto total
   const tipAmount = bill * tipPercentage,
-        totalAmount = bill + tipAmount;
+        totalAmount = (bill + tipAmount) / parseFloat(nmroPersonas.value);
   
   // Mostrar los resultados
   billAmountSpan.textContent = bill.toFixed(2);
@@ -28,5 +29,5 @@ form.addEventListener('submit', function(event) {
   tipAmountSpan.textContent = tipAmount.toFixed(2);
   totalAmountSpan.textContent = totalAmount.toFixed(2);
   
-  resultDiv.classList.remove('hidden');
+  resultDiv.classList.remove('hiddenn');
 });

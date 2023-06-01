@@ -1,3 +1,10 @@
-.hidden {
+
+#result {
     display: none;
   }
+
+h1{
+  background-color: rgba(128, 0, 128, 0.233);
+  border-radius: 5px;
+  text-align: center;
+}
