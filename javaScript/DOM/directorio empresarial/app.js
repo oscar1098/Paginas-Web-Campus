@@ -1,10 +1,10 @@
-const agregar = document.getElementById('agregar'),
-      nombre = document.getElementById('nombre'),
-      email = document.getElementById('email'),
-      telefono = document.getElementById('telefono'),
+const agregar       = document.getElementById('agregar'),
+      nombre        = document.getElementById('nombre'),
+      email         = document.getElementById('email'),
+      telefono      = document.getElementById('telefono'),
       botonEliminar = document.getElementById('botonEliminar'),
-      idEliminar = document.getElementById('idEliminar');
-      padreTabla = document.getElementById('padreTabla');
+      idEliminar    = document.getElementById('idEliminar');
+      padreTabla    = document.getElementById('padreTabla');
 
 let num = 1;
 
@@ -12,10 +12,10 @@ agregar.addEventListener('submit',function(event){
 
     event.preventDefault();
 
-    const hijo = document.createElement('tr'),
-          tagth = document.createElement('th'),
-          tagtdNombre = document.createElement('td'),
-          tagtdEmail = document.createElement('td'),
+    const hijo          = document.createElement('tr'),
+          tagth         = document.createElement('th'),
+          tagtdNombre   = document.createElement('td'),
+          tagtdEmail    = document.createElement('td'),
           tagtdTelefono = document.createElement('td');
     
     hijo.classList.add('table-secondary', 'tabla');
@@ -48,3 +48,10 @@ botonEliminar.addEventListener('click', function() {
 
     idEliminar.value = '';
 })
+
+// <tr>
+//       <th scope="row">1</th>
+//       <td>Mark</td>
+//       <td>Otto</td>
+//       <td>@mdo</td>
+//     </tr>
