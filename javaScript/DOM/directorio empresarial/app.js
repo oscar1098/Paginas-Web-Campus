@@ -31,7 +31,6 @@ agregar.addEventListener('submit',function(event){
     hijo.appendChild(tagtdTelefono);
     hijo.appendChild(tagtdEmail);
 
-
     padreTabla.appendChild(hijo);
 
     nombre.value = '';
@@ -44,6 +43,7 @@ agregar.addEventListener('submit',function(event){
 botonEliminar.addEventListener('click', function() {
 
     let hijoEliminar = document.getElementById(idEliminar.value);
+
     padreTabla.removeChild(hijoEliminar);
 
     idEliminar.value = '';
