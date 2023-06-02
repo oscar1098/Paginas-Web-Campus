@@ -2,7 +2,7 @@ const padre = document.querySelector('#padre'),
       agregar = document.querySelector('#agregar'),
       eliminar = document.querySelector('#eliminar');
     
-let contador= 0;
+let contador= 0; 
 
 agregar.addEventListener('click' , function () {
     contador++;
