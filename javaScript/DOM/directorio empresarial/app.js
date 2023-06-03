@@ -8,7 +8,7 @@ const agregar       = document.getElementById('agregar'),
 
 let num = 1;
 
-agregar.addEventListener('submit',function(event){
+const agregarUsario = (event) => {
 
     event.preventDefault();
 
@@ -38,20 +38,16 @@ agregar.addEventListener('submit',function(event){
     telefono.value = '';
 
     num++;
-})
+}
 
-botonEliminar.addEventListener('click', function() {
-
+const elimiarUsario = () => {
     let hijoEliminar = document.getElementById(idEliminar.value);
 
     padreTabla.removeChild(hijoEliminar);
 
     idEliminar.value = '';
-})
+}
 
-// <tr>
-//       <th scope="row">1</th>
-//       <td>Mark</td>
-//       <td>Otto</td>
-//       <td>@mdo</td>
-//     </tr>
+agregar.addEventListener('submit', agregarUsario);
+
+botonEliminar.addEventListener('click', elimiarUsario);
