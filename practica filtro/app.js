@@ -61,24 +61,20 @@ const agregarUsuario = (event) => {
 
     const traerInformacion = (event) =>{
 
-        cont = 0;
-
-        const referenciaBotonEditar = event.target,
-              casillaBoton = referenciaBotonEditar.parentNode,
-              filaEditar = casillaBoton.parentNode,
-              hermanos = filaEditar.children;
-
-        cont++
+        
         const editarUsuario = (event) => {
+            
+            const hermanos = hijoTabla.children;
+            console.log(hermanos);
         
             event.preventDefault();
 
             
             valorCambio = [ 'no cuenta',editarNombre.value, editarTelefono.value, editarCorreo.value]; 
-            console.log(referenciaBotonEditar);
-            console.log(valorCambio);
-            console.log(hermanos);
-            console.log(cont);
+        //     console.log(referenciaBotonEditar);
+        //     console.log(valorCambio);
+        //     console.log(hermanos);
+        //     console.log(cont);
 
             
             for ( let i = 1; i <= 3; i++){
@@ -92,7 +88,7 @@ const agregarUsuario = (event) => {
             formularioEditar.removeEventListener('submit',editarUsuario);
         }
         
-        // botonEditar.removeEventListener('click',traerInformacion);
+        // // botonEditar.removeEventListener('click',traerInformacion);
         formularioEditar.addEventListener('submit',editarUsuario);
 
     }
