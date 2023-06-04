@@ -59,23 +59,15 @@ const agregarUsuario = (event) => {
 
     num++;
 
-    const traerInformacion = (event) =>{
+    const traerInformacion = () =>{
 
-        
         const editarUsuario = (event) => {
             
             const hermanos = hijoTabla.children;
-            console.log(hermanos);
         
             event.preventDefault();
-
             
             valorCambio = [ 'no cuenta',editarNombre.value, editarTelefono.value, editarCorreo.value]; 
-        //     console.log(referenciaBotonEditar);
-        //     console.log(valorCambio);
-        //     console.log(hermanos);
-        //     console.log(cont);
-
             
             for ( let i = 1; i <= 3; i++){
                 hermanos[i].textContent  = ( valorCambio[i] === '' ) ? hermanos[i].textContent : valorCambio[i];
@@ -88,25 +80,16 @@ const agregarUsuario = (event) => {
             formularioEditar.removeEventListener('submit',editarUsuario);
         }
         
-        // // botonEditar.removeEventListener('click',traerInformacion);
         formularioEditar.addEventListener('submit',editarUsuario);
-
     }
-
-
-
-
-    
 
     const eliminarUsuario = () => {
         hijoTabla.remove();
     }
-    
 
     botonEditar.addEventListener('click',traerInformacion);
 
     botonEliminar.addEventListener('click', eliminarUsuario);
-
 }
 
 formularioAgregar.addEventListener('submit', agregarUsuario);
