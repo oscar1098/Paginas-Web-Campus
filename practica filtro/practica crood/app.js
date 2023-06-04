@@ -62,9 +62,11 @@ const agregarUsuario = (event) => {
     const traerInformacion = () =>{
 
         const editarUsuario = (event) => {
+
             
+            console.log(numTabla.value);
             const hermanos = hijoTabla.children;
-        
+            
             event.preventDefault();
             
             valorCambio = [ 'no cuenta',editarNombre.value, editarTelefono.value, editarCorreo.value]; 
