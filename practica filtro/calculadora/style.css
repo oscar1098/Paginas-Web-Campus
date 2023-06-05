@@ -8,6 +8,7 @@ body{
     margin: 3px;
     background-color:  #dcdde0;
     border-radius: 10px;
+    border: none;
 }
 
 .boton:hover{
@@ -64,6 +65,7 @@ p{
     border: 1px solid black;
     margin: 3px;
     margin-left: 13px;
+    border: none;
 }
 
 .cuerpo{
