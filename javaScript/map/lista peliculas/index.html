@@ -12,16 +12,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1 class="titulo">Peliculas</h1>
+    <h1 class="titulo">FilmZone</h1>
     
     <center class="mt-5">
-        <button type="button" class="btn botonA" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Agregar</button>
-        <button type="button" class="btn botonL">Consultar</button>
+        <button type="button" class="botonA" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Agregar</button>
+        <button type="button" class="botonA">Consultar</button>
     </center>
 
-    <div class="modal fade mt-5 formulario" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal fade mt-5" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
-          <div class="modal-content">
+          <div class="modal-content formulario">
             <div class="modal-header">
               <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar nueva pelicula</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -41,11 +41,11 @@
                         <input type="text" class="form-control mb-4" id="duracion" placeholder="Duración" >
                     </div>
                     <div class="col">
-                        <label for="director" class="form-label mb-1"><b>Duración</b></label>
+                        <label for="director" class="form-label mb-1"><b>Director</b></label>
                         <input type="text" class="form-control mb-2" id="director" placeholder="Director" >
                     </div>
                     <div class="col text-center">
-                        <button class="btn btn-primary mt-4" type="submit" data-bs-dismiss="modal">Editar</button>
+                        <button class="btn bg-black mt-4" type="submit" data-bs-dismiss="modal">Agregar</button>
                     </div>
                 </form>
             </div>
@@ -53,40 +53,41 @@
         </div>
     </div>
 
-    <center>
-        <div class="row row-cols-1 row-cols-md-3 g-4 mt-4 cuerpoTarjeta">
+    <center class="mt-4">
+        <div class="text-end cuerpoTarjeta"><button class="btn btn-outline-dark rounded-circle mt-4 mb-3 me-2 btncerrar">X</button></div>
+        <div class="row row-cols-1 row-cols-md-3 g-4 cuerpoTarjeta">
             <div class="col">
-            <div class="card">
+            <div class="card border border-black">
                 <div class="card-body tarjeta">
-                <h5 class="card-title">Titulo Pelicula</h5>
-                    <p>Género:</p>
-                    <p>Duración:</p>
-                    <p>Director:</p>
-                    <button class="btn btn-danger">Eliminar</button> 
+                <h5 class="card-title fw-bold">Titulo Pelicula</h5>
+                    <p class="fw-semibold">Género:</p>
+                    <p class="fw-semibold">Duración:</p>
+                    <p class="fw-semibold">Director:</p>
+                    <button class="btnEliminar">Eliminar</button> 
                 </div>
             </div>
             </div>
             <div class="col">
-            <div class="card">
-                <div class="card-body tarjeta">
-                <h5 class="card-title">Titulo Pelicula</h5>
-                    <p>Género:</p>
-                    <p>Duración:</p>
-                    <p>Director:</p>
-                    <button class="btn btn-danger">Eliminar</button>  
+                <div class="card border border-black">
+                    <div class="card-body tarjeta">
+                    <h5 class="card-title fw-bold">Titulo Pelicula</h5>
+                        <p class="fw-semibold">Género:</p>
+                        <p class="fw-semibold">Duración:</p>
+                        <p class="fw-semibold">Director:</p>
+                        <button class="btnEliminar">Eliminar</button> 
+                    </div>
                 </div>
-            </div>
             </div>
             <div class="col">
-            <div class="card">
-                <div class="card-body tarjeta">
-                <h5 class="card-title">Titulo Pelicula</h5>
-                    <p>Género:</p>
-                    <p>Duración:</p>
-                    <p>Director:</p>
-                    <button class="btn btn-danger">Eliminar</button> 
+                <div class="card border border-black">
+                    <div class="card-body tarjeta">
+                    <h5 class="card-title fw-bold">Titulo Pelicula</h5>
+                        <p class="fw-semibold">Género:</p>
+                        <p class="fw-semibold">Duración:</p>
+                        <p class="fw-semibold">Director:</p>
+                        <button class="btnEliminar">Eliminar</button> 
+                    </div>
                 </div>
-            </div>
             </div>
         </div>
     </center>
