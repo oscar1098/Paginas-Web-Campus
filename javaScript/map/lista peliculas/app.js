@@ -7,9 +7,9 @@ const btnAgregar = document.getElementById('btnAgregar'),
       director = document.getElementById('director'),
       cuerpoTarjetas = document.getElementById('cuerpoTarjetas'),
       cerrarTarjetas = document.getElementById('cerrarTarjetas'),
+      footer = document.querySelector('.footer'),
       arregloPeliculas = [];
       
-
 let id = 0;
       
 const agregarPeliculas = (event) =>{
@@ -37,6 +37,12 @@ const ListarPeliculas = () => {
 
     if ( arregloPeliculas.length > 0 ){
 
+        if ( arregloPeliculas.length > 3 ){
+            footer.classList.remove('footer')
+        }else {
+            footer.classList.add('footer')
+        }
+
         cerrarTarjetas.classList.remove('btncerrarOculto');
 
         cuerpoTarjetas.innerHTML = '';
@@ -44,7 +50,6 @@ const ListarPeliculas = () => {
         
         for ( let pelicula of arregloPeliculas ){
 
-        
             const col =  document.createElement('div'),
               div = document.createElement('div'),
               cardBody = document.createElement('div'),
@@ -74,7 +79,6 @@ const ListarPeliculas = () => {
             div.appendChild(cardBody);
             col.appendChild(div);
 
-
             const tituloC =  pelicula.get('titulo');
             const generoC =  pelicula.get('genero');
             const duracionC =  pelicula.get('duracion');
@@ -100,18 +104,12 @@ const ListarPeliculas = () => {
                 console.log(arregloPeliculas);
 
                 ListarPeliculas()
-            
-                
-            
                 })
-
-
-
         }
-
+    }else{
+        cuerpoTarjetas.innerHTML = ''
     }
 }
-
 
 formAgregar.addEventListener('submit', agregarPeliculas);
 
