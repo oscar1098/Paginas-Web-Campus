@@ -1,0 +1,59 @@
+body{
+   background-color: rgba(128, 128, 128, 0.199);
+}
+
+.titulo{
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(128, 128, 128, 0.425);
+    color: black;
+    border-bottom: solid 2px black;
+    font-family: 'Lilita One', cursive;
+    font-size: 100px;
+    box-shadow: 0 12px 10px rgba(0, 0, 0, 0.5);
+}
+
+.emoji1{
+    padding-right: 100px;
+}
+
+.emoji2{
+    padding-left: 100px;
+}
+
+.botonA{
+    background-color: rgb(56, 167, 56);
+    padding: 10px 100px 10px 100px;
+    font-family: 'Lilita One', cursive;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.botonA:hover{
+    background-color: rgb(43, 131, 43);
+}
+
+.botonL{
+    background-color: rgb(230, 93, 84);
+    padding: 10px 100px 10px 100px;
+    font-family: 'Lilita One', cursive;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.botonL:hover{
+    background-color: rgb(197, 50, 39);
+    
+}
+
+.cuerpoTarjeta{
+    width: 70%;
+}
+.tarjeta{
+    text-align: left;
+    background-color: rgba(162, 190, 241, 0.164);
+}
+
+.tarjeta:hover{
+    background-color: rgba(109, 152, 231, 0.151);;
+}

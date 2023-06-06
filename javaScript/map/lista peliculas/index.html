@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista peliculas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 class="titulo">Peliculas</h1>
+    
+    <center class="mt-5">
+        <button type="button" class="btn botonA" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Agregar</button>
+        <button type="button" class="btn botonL">Consultar</button>
+    </center>
+
+    <div class="modal fade mt-5 formulario" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar nueva pelicula</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="formularioEditar">
+                    <div class="col">
+                      <label for="titulo" class="form-label mb-1"><b>Título</b></label>
+                      <input type="text" class="form-control mb-4" id="titulo" placeholder="Titulo">
+                    </div>
+                    <div class="col">
+                      <label for="genero" class="form-label mb-1"><b>Género</b></label>
+                      <input type="text" class="form-control mb-4" id="genero" placeholder="Género">
+                    </div>
+                    <div class="col">
+                        <label for="duracion" class="form-label mb-1"><b>Duración</b></label>
+                        <input type="text" class="form-control mb-4" id="duracion" placeholder="Duración" >
+                    </div>
+                    <div class="col">
+                        <label for="director" class="form-label mb-1"><b>Duración</b></label>
+                        <input type="text" class="form-control mb-2" id="director" placeholder="Director" >
+                    </div>
+                    <div class="col text-center">
+                        <button class="btn btn-primary mt-4" type="submit" data-bs-dismiss="modal">Editar</button>
+                    </div>
+                </form>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <center>
+        <div class="row row-cols-1 row-cols-md-3 g-4 mt-4 cuerpoTarjeta">
+            <div class="col">
+            <div class="card">
+                <div class="card-body tarjeta">
+                <h5 class="card-title">Titulo Pelicula</h5>
+                    <p>Género:</p>
+                    <p>Duración:</p>
+                    <p>Director:</p>
+                    <button class="btn btn-danger">Eliminar</button> 
+                </div>
+            </div>
+            </div>
+            <div class="col">
+            <div class="card">
+                <div class="card-body tarjeta">
+                <h5 class="card-title">Titulo Pelicula</h5>
+                    <p>Género:</p>
+                    <p>Duración:</p>
+                    <p>Director:</p>
+                    <button class="btn btn-danger">Eliminar</button>  
+                </div>
+            </div>
+            </div>
+            <div class="col">
+            <div class="card">
+                <div class="card-body tarjeta">
+                <h5 class="card-title">Titulo Pelicula</h5>
+                    <p>Género:</p>
+                    <p>Duración:</p>
+                    <p>Director:</p>
+                    <button class="btn btn-danger">Eliminar</button> 
+                </div>
+            </div>
+            </div>
+        </div>
+    </center>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+    <script src="https://kit.fontawesome.com/2a2d77d013.js" crossorigin="anonymous"></script>
+</body>
+</html>
