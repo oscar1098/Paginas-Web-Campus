@@ -27,10 +27,7 @@ const agregarPeliculas = (event) =>{
     arregloPeliculas.push(mapPelicula);
     id++
 
-    titulo.value = '';
-    genero.value = '';
-    duracion.value = '';
-    director.value = '';
+    formAgregar.reset();
 }
 
 const ListarPeliculas = () => {
