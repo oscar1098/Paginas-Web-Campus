@@ -97,8 +97,6 @@ const ListarPeliculas = () => {
 
                 let idB = parseInt(event.target.id);
 
-                console.log(idB);
-
                 arregloPeliculas.splice(idB,1)
 
                 console.log(arregloPeliculas);
