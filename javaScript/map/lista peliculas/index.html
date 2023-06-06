@@ -15,8 +15,8 @@
     <h1 class="titulo">FilmZone</h1>
     
     <center class="mt-5">
-        <button type="button" class="botonA" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Agregar</button>
-        <button type="button" class="botonA">Listar</button>
+        <button type="button" id="btnAgregar" class="botonA" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Agregar</button>
+        <button type="button" id="btnListar" class="botonA">Listar</button>
     </center>
 
     <div class="modal fade mt-5" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -27,7 +27,7 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form id="formularioEditar">
+                <form id="formAgregar">
                     <div class="col">
                       <label for="titulo" class="form-label mb-1"><b>Título</b></label>
                       <input type="text" class="form-control mb-4" id="titulo" placeholder="Titulo">
@@ -53,42 +53,10 @@
         </div>
     </div>
 
-    <center class="mt-4">
-        <div class="text-end cuerpoTarjeta"><button class="btn btn-outline-dark rounded-circle mt-4 mb-3 me-2 btncerrar">X</button></div>
-        <div class="row row-cols-1 row-cols-md-3 g-4 cuerpoTarjeta">
-            <div class="col">
-            <div class="card border border-black">
-                <div class="card-body tarjeta">
-                <h5 class="card-title fw-bold">Titulo Pelicula</h5>
-                    <p class="fw-semibold">Género:</p>
-                    <p class="fw-semibold">Duración:</p>
-                    <p class="fw-semibold">Director:</p>
-                    <button class="btnEliminar">Eliminar</button> 
-                </div>
-            </div>
-            </div>
-            <div class="col">
-                <div class="card border border-black">
-                    <div class="card-body tarjeta">
-                    <h5 class="card-title fw-bold">Titulo Pelicula</h5>
-                        <p class="fw-semibold">Género:</p>
-                        <p class="fw-semibold">Duración:</p>
-                        <p class="fw-semibold">Director:</p>
-                        <button class="btnEliminar">Eliminar</button> 
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card border border-black">
-                    <div class="card-body tarjeta">
-                    <h5 class="card-title fw-bold">Titulo Pelicula</h5>
-                        <p class="fw-semibold">Género:</p>
-                        <p class="fw-semibold">Duración:</p>
-                        <p class="fw-semibold">Director:</p>
-                        <button class="btnEliminar">Eliminar</button> 
-                    </div>
-                </div>
-            </div>
+    <center class="mt-4 mb-5">
+        <div class="text-end cuerpoTarjeta"><button class="btn btn-outline-dark rounded-circle mt-4 mb-3 me-2 btncerrar btncerrarOculto" id="cerrarTarjetas">X</button></div>
+        <div class="row row-cols-1 row-cols-md-3 g-4 cuerpoTarjeta" id="cuerpoTarjetas">
+           
         </div>
     </center>
 

@@ -43,9 +43,10 @@ body{
 }
 .tarjeta{
     text-align: left;
-    background-image: url('assets/fontoTarjeta.jpeg');
+    background-color: rgb(15, 15, 87);
+    /* background-image: url('assets/fontoTarjeta.jpeg');
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; */
     color: white;
     font-size: 20px;
 }
@@ -74,6 +75,10 @@ body{
 .btncerrar{
     color: black;
     border: solid 1px black;
+}
+
+.btncerrarOculto{
+    display: none;
 }
 
 .formulario{
