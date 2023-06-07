@@ -91,10 +91,12 @@ const ListarPeliculas = () => {
 
             buttonEliminar.addEventListener( 'click', (event) =>{
 
-                let idB = parseInt(event.target.id);
+                let idB = event.target.id;
 
                 for( pelicula of arregloPeliculas ){
+                    
                     if ( pelicula.get('id')== idB ){
+
                         let indice = arregloPeliculas.indexOf( pelicula );
                         arregloPeliculas.splice(indice,1);
                         ListarPeliculas();
