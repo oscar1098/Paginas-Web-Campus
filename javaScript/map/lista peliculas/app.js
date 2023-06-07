@@ -11,6 +11,7 @@ const btnAgregar = document.getElementById('btnAgregar'),
       arregloPeliculas = [];
       
 let id = 0;
+
       
 const agregarPeliculas = (event) =>{
 
@@ -43,7 +44,6 @@ const ListarPeliculas = () => {
         cerrarTarjetas.classList.remove('btncerrarOculto');
 
         cuerpoTarjetas.innerHTML = '';
-        let idElim = 0;
         
         for ( let pelicula of arregloPeliculas ){
 
@@ -66,7 +66,7 @@ const ListarPeliculas = () => {
             buttonEliminar.classList.add('btnEliminar');
             buttonEliminar.textContent = 'Eliminar';
             buttonEliminar.type = 'button';
-            buttonEliminar.id = `${idElim}`;
+            buttonEliminar.id = pelicula.get('id');
 
             cardBody.appendChild(h5);
             cardBody.appendChild(pG);
@@ -88,15 +88,20 @@ const ListarPeliculas = () => {
 
             cuerpoTarjetas.appendChild(col);
 
-            idElim++
 
             buttonEliminar.addEventListener( 'click', (event) =>{
 
                 let idB = parseInt(event.target.id);
 
-                arregloPeliculas.splice(idB,1);
+                for( pelicula of arregloPeliculas ){
+                    if ( pelicula.get('id')== idB ){
+                        let indice = arregloPeliculas.indexOf( pelicula );
+                        arregloPeliculas.splice(indice,1);
+                        ListarPeliculas();
+                    }
+                }
 
-                ListarPeliculas();
+
                 })
         }
     }else{
@@ -109,7 +114,7 @@ formAgregar.addEventListener('submit', agregarPeliculas);
 btnListar.addEventListener('click', ListarPeliculas);
 
 cerrarTarjetas.addEventListener('click', () => {
-    
+
     cerrarTarjetas.classList.add('btncerrarOculto');
     cuerpoTarjetas.innerHTML = '';
 })
