@@ -1,0 +1,9 @@
+.logo {
+    width: 150px; 
+    height: 110px; 
+    margin-right: 20px; 
+    background-color: black;
+    /* background-image: url(./imagenes_servicios/paginaArreglos-01.png);  */
+    background-size: cover; 
+    background-position: center;
+}
