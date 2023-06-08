@@ -265,19 +265,20 @@ const agregarRutas = (event) => {
     ruta['ciudadOr'] = ciudadOrigen.value;
     ruta['ciudadDes'] = ciudadDestino.value;
     ruta['puntos'] = puntosFide.value;
-    agregarDestino.reset();
-
     idRutas++
-
+    
     arregloRutas.push(ruta);
+    console.log(arregloRutas);
+    
+    agregarDestino.reset();
 }
 
 
 const crearTablaRutas = () => {
 
-    if (  padreTablaDestino.length === 0 ){
+    if (  arregloRutas.length === 0 ){
         return;
-    }
+    } 
     padreTablaDestino.innerHTML = '';
     for ( let ruta in arregloRutas ){
 
