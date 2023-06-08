@@ -297,7 +297,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="modalPasajero"></h1>
+          <h1 class="modal-title fs-5" id="modalPasajero">Informacion de usuario</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body" id="cuerpoModalBusquedaPasajero">
@@ -306,7 +306,67 @@
       </div>
     </div>
   </div>
-
+  
+  <!-- Modal editar pasajeros -->
+  <div class="modal fade" id="modalEditar" tabindex="-1" aria-labelledby="modalPasajero" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="modalPasajero">Editar usuario</h1>
+        </div>
+        <div class="modal-body">
+          <form class="row g-3 needs-validation m-3" id="editarPasajeros">
+            <div class="mt-5 col-md-6 position-relative">
+              <div class="form-outline">
+                <label for="identiEditar" class="form-label">Número de identificaión</label>
+                <input type="number" class="form-control" id="identiEditar" placeholder="Vacio no hace cambios"/>
+              </div>
+            </div>
+            <div class="mt-5 col-md-6 position-relative">
+              <div class="form-outline">
+                <label for="nombrePersonaEditar" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombrePersonaEditar" placeholder="Vacio no hace cambios"/>
+              </div>
+            </div>
+            <div class="mt-5 col-md-6 position-relative">
+              <div class="form-outline">
+                <label for="apellidoEditar" class="form-label">Apellidos</label>
+                <input type="text" class="form-control" id="apellidoEditar" placeholder="Vacio no hace cambios"/>
+              </div>
+            </div>
+            <div class="mt-5 col-md-6 position-relative">
+              <div class="form-outline">
+                <label for="telefonoEditar" class="form-label">Teléfono</label>
+                <input type="number" class="form-control" id="telefonoEditar" placeholder="Vacio no hace cambios"/>
+              </div>
+            </div>
+            <div class="mt-5 col-md-6 position-relative">
+              <div class="form-outline">
+                <label for="correoEditar" class="form-label">Correo</label>
+                <input type="email" class="form-control" id="correoEditar" placeholder="Vacio no hace cambios"/>
+              </div>
+            </div>
+            <div class="mt-5 col-md-6 position-relative">
+              <div class="form-outline">
+                <label for="fechaEditar" class="form-label">Fecha de nacimiento</label>
+                <input type="datetime" class="form-control" id="fechaEditar" placeholder="Vacio no hace cambios"/>
+              </div>
+            </div>
+            <div class="mt-5 col-md-6 position-relative">
+              <div class="form-outline">
+                <label for="nacionalidadEditar" class="form-label">Nacionalidad</label>
+                <input type="text" class="form-control" id="nacionalidadEditar" placeholder="Vacio no hace cambios"/>
+              </div>
+            </div>
+            <div class="mt-3 pt-2">
+              <button class="btn btn-outline-success" type="submit" id="editarPasajeros" data-bs-dismiss="modal">Actualizar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
   <!-- Tabla pasajeros -->
   <center>
     <div class="text-end">
@@ -330,7 +390,6 @@
       </tbody>
     </table>
   </center>
-
   <!-- Seccion Destinos -->
   <h2 class="text-center mb-5 mt-5" id="seccionRutas">Destinos</h2>
 
@@ -394,6 +453,7 @@
       </div>
       <div class="mt-3 pt-2">
         <button class="btn btn-outline-success" type="submit">Agregar</button>
+        <button class="btn btn-outline-success" type="click" id="listarRutas">Listar</button>
       </div>
     </form>
   </center>
@@ -416,17 +476,7 @@
         </tr>
       </thead>
       <tbody id="padreTablaDestino">
-        <tr>
-          <td>OttosMarkMark</td>
-          <td>@mdosMarkMark</td>
-          <td>@mdosMarkMarkMarkMarkMark</td>
-          <td>@mdosMarkMark</td>
-          <td>@mdosMarkMarkMarkMark</td>
-          <td>@mdosMarkMarkMarkMark</td>
-          <td class="text-center w-25">
-            <button class="btn btn-sm  btn-danger m-1" type="button" id="eliminar">Eliminar</button>
-          </td>
-        </tr>
+        
       </tbody>
     </table>
 
