@@ -31,22 +31,122 @@ const agregarPasajeros = document.getElementById('agregarPasajeros'),  //formula
       
       let idPasajero = 0; // id pasajero para llevar control de eliminar y editar
 
-      const agregarUsuarios = (event) => {   // Agrega pasajeros al arreglo pasajeros
+      const agregarPasajerosArreglo = (event) => {   // Agrega pasajeros al arreglo pasajeros
 
         event.preventDefault();
 
         const pasajero = {};
 
         pasajero['id'] = idPasajero;
-        pasajero['nombre'] = nombrePersona;
-        pasajero['apellido'] = apellido;
-        pasajero['telefono'] = telefono;
-        pasajero['correo'] = correo;
-        pasajero['fecha'] = fecha;
-        pasajero['nacionalidad'] = nacionalidad;
+        pasajero['identi'] = identi.value;
+        pasajero['nombre'] = nombrePersona.value;
+        pasajero['apellido'] = apellido.value;
+        pasajero['telefono'] = telefono.value;
+        pasajero['correo'] = correo.value;
+        pasajero['fecha'] = fecha.value;
+        pasajero['nacionalidad'] = nacionalidad.value;
+        pasajero['fidelizacion'] = 0;               // control puntos de fidelizacion
+        idPasajero++;
 
-
+        agregarPasajeros.reset();
+        arregloPasajeros.push(pasajero);
       }
+
+
+      const listarPasajeros = () => {   //Listar pasajeros del arregloPasajeros en el DOM
+
+        if (arregloPasajeros.length === 0){     // Valida que hayan pasajeros
+            alert('No hay usuarios en el sistema');
+            return;}
+
+        padreTablaPasajeros.innerHTML = ''; //Limpia la tabla pasajeros del DOM
+
+        for ( pasajero of arregloPasajeros ){   // Recorre el arreglo de pasajeros
+
+            const   // creacion de las etiquetas
+                  tdIden = document.createElement('th'),
+                  tdNom = document.createElement('td'),
+                  tdApe = document.createElement('td'),
+                  tdTel = document.createElement('td'),
+                  tdCorr = document.createElement('td'),
+                  tdFecha = document.createElement('td'),
+                  tdNAcio = document.createElement('td'),
+                  tdBotones = document.createElement('td'),
+                  botonEli = document.createElement('button'),
+                  botonEdi = document.createElement('button');
+                  hijoTablaPasajeros = document.createElement('tr');
+
+                  tdBotones.classList.add('text-center', 'w-25');
+                  botonEdi.classList.add('btn', 'btn-sm',  'btn-warning', 'm-1');
+                  botonEli.classList.add('btn', 'btn-sm',  'btn-danger', 'm-1');
+
+                  botonEdi.setAttribute("data-bs-toggle","modal");
+                  botonEdi.setAttribute("data-bs-target","staticBackdrop");
+
+                  botonEdi.id = `${pasajero.id}`
+                  botonEli.id = `${pasajero.id}`
+
+                  tdIden.textContent = `${pasajero.identi}`;
+                  tdNom.textContent = `${pasajero.nombre}`;
+                  tdApe.textContent = `${pasajero.apellido}`;
+                  tdTel.textContent = `${pasajero.telefono}`;
+                  tdCorr.textContent = `${pasajero.correo}`;
+                  tdFecha.textContent = `${pasajero.fecha}`;
+                  tdNAcio.textContent = `${pasajero.nacionalidad}`;
+                  botonEdi.textContent = 'Editar';
+                  botonEli.textContent = 'Eliminar';
+
+                  tdBotones.appendChild(botonEdi);
+                  tdBotones.appendChild(botonEli);
+                  
+                  hijoTablaPasajeros.appendChild(tdIden);
+                  hijoTablaPasajeros.appendChild(tdNom);
+                  hijoTablaPasajeros.appendChild(tdApe);
+                  hijoTablaPasajeros.appendChild(tdTel);
+                  hijoTablaPasajeros.appendChild(tdCorr);
+                  hijoTablaPasajeros.appendChild(tdFecha);
+                  hijoTablaPasajeros.appendChild(tdNAcio);
+                  hijoTablaPasajeros.appendChild(tdBotones);
+
+                  padreTablaPasajeros.appendChild(hijoTablaPasajeros);
+
+            //Creacion de la tabla en el DOM
+            
+
+
+
+
+                    botonEli.addEventListener('click', (event) => {
+
+                        let idBorrar = event.target.id;
+
+                        for ( pasajero of arregloPasajeros ){
+
+                            if ( pasajero.id == idBorrar ){
+                                let indiceBorrar = arregloPasajeros.indexOf( pasajero );
+                                arregloPasajeros.splice(indiceBorrar,1);
+                                if ( arregloPasajeros.length === 0 ){
+                                    padreTablaPasajeros.innerHTML = '';
+                                }else{
+                                    listarPasajeros();
+                                }
+
+                            }
+                        }
+                    })
+
+                
+               
+
+
+        }
+      }
+
+      agregarPasajeros.addEventListener('submit',agregarPasajerosArreglo);
+
+      listar.addEventListener('click',listarPasajeros)
+
+
 
 
 
