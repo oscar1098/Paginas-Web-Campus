@@ -23,8 +23,7 @@ const agregarPasajeros = document.getElementById('agregarPasajeros'),  //formula
       fechaEditar = document.getElementById('fechaEditar'), // Fecha editar
       nacionalidadEditar = document.getElementById('nacionalidadEditar'), // Nacionalidad Edtar
       listarRutas =  document.getElementById('listarRutas');
-
-
+      modalcompra = document.getElementById('modalcompra');
 
     agregarDestino = document.getElementById('agregarDestino'), // Formulario rutas
     nombreRuta = document.getElementById('nombreRuta'),// Nombre de la ruta
@@ -40,7 +39,7 @@ const agregarPasajeros = document.getElementById('agregarPasajeros'),  //formula
     selectRuta = document.getElementById('selectRuta'),
     padreTablaFidelizacion = document.getElementById('padreTablaFidelizacion'), // Padre tabla fidelizacion
 
-    comprar = document.getElementById('comprar');
+    agregarCompra = document.getElementById('agregarCompra');
 
     arregloPasajeros = [],
     arregloRutas = [];
@@ -70,7 +69,7 @@ const agregarPasajeros = document.getElementById('agregarPasajeros'),  //formula
     arregloPasajeros.push(pasajero);
     
     const opcrionPasajero = document.createElement('option');
-    opcrionPasajero.textContent = `${pasajero.nombre} ${pasajero.apellido}`;
+    opcrionPasajero.textContent = `${pasajero.identi}`;
     selectPasajero.appendChild(opcrionPasajero);
     }
 
@@ -174,11 +173,50 @@ const agregarPasajeros = document.getElementById('agregarPasajeros'),  //formula
                         let indiceEditar = arregloPasajeros.indexOf( pasajero ); //Obtengo el indice en el array del pasajero
                         console.log(indiceEditar);
 
-                        arregloPasajeros[indiceEditar].identi = (identiEditar.value != '') ? identiEditar.value : arregloPasajeros[indiceEditar].identi;
+                        if ( identiEditar.value != '' ){
 
-                        arregloPasajeros[indiceEditar].nombre = (nombrePersonaEditar.value != '') ? nombrePersonaEditar.value: arregloPasajeros[indiceEditar].nombre;
+                            for ( let i = 0; i <  selectPasajero.length; i++ ){
+                                if ( selectPasajero[i].textContent == arregloPasajeros[indiceEditar].identi ){
+                                    selectPasajero[i].textContent =  identiEditar.value;
+                                }
+                            }
+                            
+                            arregloPasajeros[indiceEditar].identi = identiEditar.value
+                        } else{
+                            arregloPasajeros[indiceEditar].identi = arregloPasajeros[indiceEditar].identi;
+                        }
 
-                        arregloPasajeros[indiceEditar].apellido = (apellidoEditar.value != '') ? apellidoEditar.value: arregloPasajeros[indiceEditar].apellido;
+                        if ( nombrePersonaEditar.value != '' ){
+
+                           let tdTablaPuntos = padreTablaFidelizacion.getElementsByTagName('td');
+
+                           for ( let i = 0; i < tdTablaPuntos.length; i++ ){
+
+                            if ( tdTablaPuntos[i].textContent == arregloPasajeros[indiceEditar].nombre ){
+                                tdTablaPuntos[i].textContent =  nombrePersonaEditar.value;
+                            }
+                           }
+
+                            arregloPasajeros[indiceEditar].nombre = nombrePersonaEditar.value;
+                        } else{
+                            arregloPasajeros[indiceEditar].nombre = arregloPasajeros[indiceEditar].nombre;
+                        }
+
+                        if ( apellidoEditar.value != '' ){
+
+                            let tdTablaPuntos = padreTablaFidelizacion.getElementsByTagName('td');
+ 
+                            for ( let i = 0; i < tdTablaPuntos.length; i++ ){
+ 
+                             if ( tdTablaPuntos[i].textContent == arregloPasajeros[indiceEditar].apellido ){
+                                 tdTablaPuntos[i].textContent =  apellidoEditar.value;
+                             }
+                            }
+ 
+                             arregloPasajeros[indiceEditar].apellido = apellidoEditar.value;
+                         } else{
+                             arregloPasajeros[indiceEditar].apellido = arregloPasajeros[indiceEditar].apellido;
+                         }
 
                         arregloPasajeros[indiceEditar].telefono = (telefonoEditar.value != '') ? telefonoEditar.value: arregloPasajeros[indiceEditar].telefono;
 
@@ -351,36 +389,68 @@ listarRutas.addEventListener('click', listarViajes);
 const realizarCompra = (event) => {
     
     event.preventDefault();
-    
+
+    contenidoCompra.innerHTML = '';
+
     let valorCompra = 0;
-    let pasajero = ''
+    let pasajeroCompra = ''
     const ruta = selectRuta.value;
     const pasa = selectPasajero.value;
-    let puntos = '';
+    let puntos = 0;
+    
+    if ( pasa == 'Seleccione el pasajero' || ruta == 'Seleccione la ruta de viaje'  ){
+        error = document.createElement('p')
+        error.textContent = 'Por favor selccion el pasajero y la ruta'
+        contenidoCompra.appendChild(error)
+        return;
+    }
 
     for ( let viaje of arregloRutas ) {
         if ( viaje.nombre == ruta){
-            valorCompra = viaje.valor*0.16 + viaje.valor*0.4 + viaje.valor;
-            puntos = viaje.puntos;
+            let precio = parseFloat(viaje.valor)
+            valorCompra = precio*0.16 + precio*0.04 + precio;
+            puntos = parseFloat(viaje.puntos);
         }
     }
+    
+    padreTablaFidelizacion.innerHTML=''
 
     for ( pasajero of arregloPasajeros ){
-        if (pasa.includes( pasajero.nombre ) && pasa.includes( pasajero.apellido )){
-            pasajero.fidelizacion = puntos 
+        if (pasa.includes( pasajero.identi )){
+            let puntosTotal = parseFloat(pasajero.fidelizacion) + puntos;
+            pasajero.fidelizacion = puntosTotal;
+            pasajeroCompra = pasajero.nombre + ' ' + pasajero.apellido;
         }
-    }
 
-    alert(`
-        Resumen de la Compra
-        Nombre: ${pasajero}
-        Valor de la compra: ${valorCompra}
-        Destino: ${ruta}
-        puntos fidelizacion: ${puntos}
-    `)
- 
+        if ( pasajero.fidelizacion != 0 ){
+            const cuerpoTablaPunos = document.createElement('tr')
+            cuerpoTablaPunos.innerHTML = `
+            <tr>
+                <td>${pasajero.nombre}</td>
+                <td>${pasajero.apellido}</td>
+                <td>${pasajero.fidelizacion}</td>
+              </tr>
+            `
+            padreTablaFidelizacion.appendChild(cuerpoTablaPunos);
+        }
+
+    }
+    
+    resumnCompra = document.createElement('div');
+    
+    resumnCompra.innerHTML = `
+    <p>Nombre: ${pasajeroCompra}</p>
+    <p>Ruta: ${ruta}</p>
+    <p>Valor: ${valorCompra}</p>
+    <p>Puntos: ${puntos}</p>
+    `
+    contenidoCompra.appendChild(resumnCompra)
+
+
+
+
 }
-comprar.addEventListener('submit',realizarCompra);
+agregarCompra.addEventListener('submit',realizarCompra);
 
     // <tr>  tabla rutas
     //       <td>OttosMarkMark</td>
