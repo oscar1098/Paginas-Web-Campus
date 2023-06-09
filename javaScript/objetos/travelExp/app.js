@@ -27,7 +27,7 @@ const agregarPasajeros = document.getElementById('agregarPasajeros'),  //formula
 
 
     agregarDestino = document.getElementById('agregarDestino'), // Formulario rutas
-    nombreRuta = document.getElementById('nombreRuta'),
+    nombreRuta = document.getElementById('nombreRuta'),// Nombre de la ruta
     valorTiquete = document.getElementById('valorTiquete'), // Input valor de la ruta
     ciudadOrigen = document.getElementById('ciudadOrigen'), // Input ciudad de origen
     ciudadDestino = document.getElementById('nombreRuta'), // Input ciudad destino
@@ -37,11 +37,12 @@ const agregarPasajeros = document.getElementById('agregarPasajeros'),  //formula
     agregarCompra = document.getElementById('agregarCompra'), // Formulario compra de tiquetes
     selectPasajero = document.getElementById('selectPasajero'), // Select de pasajero
     contenidoCompra = document.getElementById('contenidoCompra'), // Modal contenido de la compra
-
+    selectRuta = document.getElementById('selectRuta'),
     padreTablaFidelizacion = document.getElementById('padreTablaFidelizacion'), // Padre tabla fidelizacion
 
+    comprar = document.getElementById('comprar');
+
     arregloPasajeros = [],
-    arregloRutas = [],
     arregloRutas = [];
     
     let idPasajero = 0; // id pasajero para llevar control de eliminar y editar
@@ -67,6 +68,10 @@ const agregarPasajeros = document.getElementById('agregarPasajeros'),  //formula
 
     agregarPasajeros.reset();
     arregloPasajeros.push(pasajero);
+    
+    const opcrionPasajero = document.createElement('option');
+    opcrionPasajero.textContent = `${pasajero.nombre} ${pasajero.apellido}`;
+    selectPasajero.appendChild(opcrionPasajero);
     }
 
 
@@ -252,76 +257,130 @@ const buscador = () => {
 
 botonBuscar.addEventListener('click', buscador)
 
-
-const agregarRutas = (event) => {
-
-    const ruta = {};
+const agregarRuta = (event) => {
 
     event.preventDefault();
 
+    const ruta = {};
+
     ruta['id'] = idRutas;
     ruta['nombre'] = nombreRuta.value;
-    ruta['tiquete'] = valorTiquete.value;
-    ruta['ciudadOr'] = ciudadOrigen.value;
+    ruta['valor'] = valorTiquete.value;
+    ruta['ciudadOri'] = ciudadOrigen.value;
     ruta['ciudadDes'] = ciudadDestino.value;
     ruta['puntos'] = puntosFide.value;
-    idRutas++
-    
-    arregloRutas.push(ruta);
-    console.log(arregloRutas);
+    idRutas++;
     
     agregarDestino.reset();
+    arregloRutas.push(ruta);
+
+    const optionRutas = document.createElement('option');
+    optionRutas.textContent = ruta.nombre;
+    selectRuta.appendChild(optionRutas);
 }
 
+const listarViajes = () => {
 
-const crearTablaRutas = () => {
-
-    if (  arregloRutas.length === 0 ){
+    if ( arregloRutas.length === 0 ){
+        alert('No hay usuarios en el sistema');
         return;
-    } 
+    }
     padreTablaDestino.innerHTML = '';
-    for ( let ruta in arregloRutas ){
 
-        const tr =  document.createElement('tr'),
-              tdI = document.createElement('td'),
-              tdN = document.createElement('td'),
-              tdV = document.createElement('td'),
-              tdCo = document.createElement('td'),
-              tdCd = document.createElement('td'),
-              tdPf = document.createElement('td'),
-              tdE = document.createElement('td'),
-              btnElRu = document.createElement('button');
-        
-        tdE.classList.add('text-center','w-25');
-        btnElRu.classList.add('btn','btn-sm','btn-danger','m-1');
-        btnElRu.type = 'button';
-        btnElRu.id = ruta.id;
+    for ( viaje of arregloRutas ){
 
-        tdI.textContent = `${ruta.id}`;
-        tdN.textContent = `${ruta.nombre}`;
-        tdV.textContent = `${ruta.tiquete}`;
-        tdCo.textContent = `${ruta.ciudadOr}`;
-        tdCd.textContent = `${ruta.ciudadDes}`;
-        tdPf.textContent = `${ruta.puntos}`;
-        btnElRu.textContent = 'Eliminar'
+        const tr = document.createElement('tr'),
+              tdId = document.createElement('td'),
+              tdNom = document.createElement('td'),
+              tdTi = document.createElement('td'),
+              tdCiuO = document.createElement('td'),
+              tdCiuDes = document.createElement('td'),
+              tdPun = document.createElement('td'),
+              tdElim = document.createElement('td'),
+              botonElimRut = document.createElement('button');
+              
+        tdElim.classList.add('text-center', 'w-25');
+        botonElimRut.classList.add('btn', 'btn-sm',  'btn-danger', 'm-1');
+        botonElimRut.type = 'button';
+        botonElimRut.id = viaje.id;
 
+        tdId.textContent = viaje.id;
+        tdNom.textContent = viaje.nombre;
+        tdTi.textContent = viaje.valor;
+        tdCiuO.textContent = viaje.ciudadOri;
+        tdCiuDes.textContent = viaje.ciudadDes;
+        tdPun.textContent = viaje.puntos;
+        botonElimRut.textContent = 'Eliminar';
 
-        tdE.appendChild(btnElRu);
-        tr.appendChild(tdI);
-        tr.appendChild(tdN);
-        tr.appendChild(tdV);
-        tr.appendChild(tdCo);
-        tr.appendChild(tdCd);
-        tr.appendChild(tdPf);
-        tr.appendChild(tdE);
+        tdElim.appendChild(botonElimRut);
+        tr.appendChild(tdId);
+        tr.appendChild(tdNom);
+        tr.appendChild(tdTi);
+        tr.appendChild(tdCiuO);
+        tr.appendChild(tdCiuDes);
+        tr.appendChild(tdPun);
+        tr.appendChild(tdElim);
 
         padreTablaDestino.appendChild(tr);
+
+        const eliminarRuta = (event) =>{
+            let idBoton = event.target.id;
+
+            for ( let viaje of arregloRutas ){
+                if ( viaje.id == idBoton){
+
+                    let indiceElim = arregloRutas.indexOf( viaje );
+                    arregloRutas.splice(indiceElim,1);
+                    if ( arregloRutas.length === 0 ){
+                        padreTablaDestino.innerHTML = '';
+                    }else{
+                        listarViajes();
+                    }
+                }
+            }
+        }
+        
+        
+        botonElimRut.addEventListener('click', eliminarRuta)
     }
 }
 
-agregarDestino.addEventListener('submit', agregarRutas);
+agregarDestino.addEventListener('submit', agregarRuta);
+listarRutas.addEventListener('click', listarViajes);
 
-listarRutas.addEventListener('click',crearTablaRutas);
+const realizarCompra = (event) => {
+    
+    event.preventDefault();
+    
+    let valorCompra = 0;
+    let pasajero = ''
+    const ruta = selectRuta.value;
+    const pasa = selectPasajero.value;
+    let puntos = '';
+
+    for ( let viaje of arregloRutas ) {
+        if ( viaje.nombre == ruta){
+            valorCompra = viaje.valor*0.16 + viaje.valor*0.4 + viaje.valor;
+            puntos = viaje.puntos;
+        }
+    }
+
+    for ( pasajero of arregloPasajeros ){
+        if (pasa.includes( pasajero.nombre ) && pasa.includes( pasajero.apellido )){
+            pasajero.fidelizacion = puntos 
+        }
+    }
+
+    alert(`
+        Resumen de la Compra
+        Nombre: ${pasajero}
+        Valor de la compra: ${valorCompra}
+        Destino: ${ruta}
+        puntos fidelizacion: ${puntos}
+    `)
+ 
+}
+comprar.addEventListener('submit',realizarCompra);
 
     // <tr>  tabla rutas
     //       <td>OttosMarkMark</td>
