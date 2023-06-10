@@ -17,7 +17,7 @@
 <body>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg fixed-top bg-body-tertiary">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary " id="navbar">
     <div class="container-fluid fondoNav">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
         aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,7 +34,7 @@
             <a class="btn btn-outline-dark border-0" aria-current="page" href="#conoceServicios">Menu</a>
           </li>
           <li class="nav-item">
-            <a class="btn btn-outline-dark border-0" aria-current="page" href="#viveSueño">Vive</a>
+            <a class="btn btn-outline-dark border-0" aria-current="page" href="#vivieTuSueño">Vive</a>
           </li>
           <li class="nav-item">
             <a class="btn btn-outline-dark border-0" aria-current="page" href="#footer">Quienes somos</a>
@@ -46,10 +46,6 @@
         </form>
       </div>
   </nav>
-
-  <!-- Para que no se suba el carrusel -->
-  <nav class="navbar navbar-expand-lg mb-5"  id="navbar"></nav>
-  <nav class="navbar navbar-expand-lg"></nav>
 
   <!--Carrusel general  -->
   <div id="carruselGeneral" class="carousel slide mt-5" data-bs-ride="carousel" ;>
@@ -126,7 +122,7 @@
   <!--Tarjetas-->
   <center>
     <section class="servicios">
-      <h2 class="mt-5">Vive tu sueño</h2>
+      <h2 class="mt-5" id="vivieTuSueño">Vive tu sueño</h2>
       <div class="container">
         <div class="row">
           <div class="col col-xs-4 mt-5">
@@ -233,44 +229,44 @@
   <center>
     <form class="row g-3 needs-validation m-3" id="agregarPasajeros">
       <div class="mt-5 col-md-4 position-relative">
-        <div class="form-outline">
-          <label for="identi" class="form-label">Número de identificaión</label>
+        <div class="form-outline text-start">
+          <label for="identi" class="form-label"><b>Número de identificaión</b></label>
           <input type="number" class="form-control" id="identi" placeholder="Número de identificaión" required />
         </div>
       </div>
       <div class="mt-5 col-md-4 position-relative">
-        <div class="form-outline">
-          <label for="nombrePersona" class="form-label">Nombre</label>
+        <div class="form-outline text-start">
+          <label for="nombrePersona" class="form-label"><b>Nombre</b></label>
           <input type="text" class="form-control" id="nombrePersona" placeholder="Nombre" required />
         </div>
       </div>
       <div class="mt-5 col-md-4 position-relative">
-        <div class="form-outline">
-          <label for="apellido" class="form-label">Apellidos</label>
+        <div class="form-outline text-start">
+          <label for="apellido" class="form-label"><b>Apellidos</b></label>
           <input type="text" class="form-control" id="apellido" placeholder="Apellidos" required />
         </div>
       </div>
       <div class="mt-5 col-md-3 position-relative">
-        <div class="form-outline">
-          <label for="telefono" class="form-label">Teléfono</label>
+        <div class="form-outline text-start">
+          <label for="telefono" class="form-label"><b>Teléfono</b></label>
           <input type="number" class="form-control" id="telefono" placeholder="Teléfono" required />
         </div>
       </div>
       <div class="mt-5 col-md-4 position-relative">
-        <div class="form-outline">
-          <label for="correo" class="form-label">Correo</label>
+        <div class="form-outline text-start">
+          <label for="correo" class="form-label"><b>Correo</b></label>
           <input type="email" class="form-control" id="correo" placeholder="Correo" required />
         </div>
       </div>
       <div class="mt-5 col-md-2 position-relative">
-        <div class="form-outline">
-          <label for="fecha" class="form-label">Fecha de nacimiento</label>
-          <input type="datetime" class="form-control" id="fecha" placeholder="dd-mm-aa" required />
+        <div class="form-outline text-start">
+          <label for="fecha" class="form-label"><b>Fecha de nacimiento</b></label>
+          <input type="date" class="form-control" id="fecha" placeholder="dd-mm-aa" required />
         </div>
       </div>
       <div class="mt-5 col-md-3 position-relative">
-        <div class="form-outline">
-          <label for="nacionalidad" class="form-label">Nacionalidad</label>
+        <div class="form-outline text-start">
+          <label for="nacionalidad" class="form-label"><b>Nacionalidad</b></label>
           <input type="text" class="form-control" id="nacionalidad" placeholder="Nacionalidad" required />
         </div>
       </div>
@@ -295,7 +291,7 @@
   <!-- Modal barra de busqueda pasajeros -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="modalPasajero" aria-hidden="true">
     <div class="modal-dialog">
-      <div class="modal-content">
+      <div class="modal-content estiloModal">
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="modalPasajero">Informacion de usuario</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -310,7 +306,7 @@
   <!-- Modal editar pasajeros -->
   <div class="modal fade" id="modalEditar" tabindex="-1" aria-labelledby="modalPasajero" aria-hidden="true">
     <div class="modal-dialog">
-      <div class="modal-content">
+      <div class="modal-content estiloModal">
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="modalPasajero">Editar usuario</h1>
         </div>
@@ -318,43 +314,43 @@
           <form class="row g-3 needs-validation m-3" id="editarPasajeros">
             <div class="mt-5 col-md-6 position-relative">
               <div class="form-outline">
-                <label for="identiEditar" class="form-label">Número de identificaión</label>
+                <label for="identiEditar" class="form-label"><b>Número de identificaión</b></label>
                 <input type="number" class="form-control" id="identiEditar" placeholder="Vacio no hace cambios"/>
               </div>
             </div>
             <div class="mt-5 col-md-6 position-relative">
               <div class="form-outline">
-                <label for="nombrePersonaEditar" class="form-label">Nombre</label>
+                <label for="nombrePersonaEditar" class="form-label"><b>Nombre</b></label>
                 <input type="text" class="form-control" id="nombrePersonaEditar" placeholder="Vacio no hace cambios"/>
               </div>
             </div>
             <div class="mt-5 col-md-6 position-relative">
               <div class="form-outline">
-                <label for="apellidoEditar" class="form-label">Apellidos</label>
+                <label for="apellidoEditar" class="form-label"><b>Apellidos</b></label>
                 <input type="text" class="form-control" id="apellidoEditar" placeholder="Vacio no hace cambios"/>
               </div>
             </div>
             <div class="mt-5 col-md-6 position-relative">
               <div class="form-outline">
-                <label for="telefonoEditar" class="form-label">Teléfono</label>
+                <label for="telefonoEditar" class="form-label"><b>Teléfono</b></label>
                 <input type="number" class="form-control" id="telefonoEditar" placeholder="Vacio no hace cambios"/>
               </div>
             </div>
             <div class="mt-5 col-md-6 position-relative">
               <div class="form-outline">
-                <label for="correoEditar" class="form-label">Correo</label>
+                <label for="correoEditar" class="form-label"><b>Correo</b></label>
                 <input type="email" class="form-control" id="correoEditar" placeholder="Vacio no hace cambios"/>
               </div>
             </div>
             <div class="mt-5 col-md-6 position-relative">
               <div class="form-outline">
-                <label for="fechaEditar" class="form-label">Fecha de nacimiento</label>
-                <input type="datetime" class="form-control" id="fechaEditar" placeholder="Vacio no hace cambios"/>
+                <label for="fechaEditar" class="form-label"><b>Fecha de nacimiento</b></label>
+                <input type="date" class="form-control" id="fechaEditar" placeholder="Vacio no hace cambios"/>
               </div>
             </div>
             <div class="mt-5 col-md-6 position-relative">
               <div class="form-outline">
-                <label for="nacionalidadEditar" class="form-label">Nacionalidad</label>
+                <label for="nacionalidadEditar" class="form-label"><b>Nacionalidad</b></label>
                 <input type="text" class="form-control" id="nacionalidadEditar" placeholder="Vacio no hace cambios"/>
               </div>
             </div>
@@ -372,23 +368,25 @@
     <div class="text-end">
       <button class="btn btn-outline-dark rounded-circle mb-3 me-5 " id="cerrarTablaPasajeros">X</button>
     </div>
-    <table class="table table-striped table-bordered w-75">
-      <thead>
-        <tr class="table-dark">
-          <th>Identificacion</th>
-          <th>Nombres</th>
-          <th>Apellidos</th>
-          <th>Telefono</th>
-          <th>Correo</th>
-          <th>Fecha de nacimiento</th>
-          <th>Nacionalidad</th>
-          <th>opciones</th>
-        </tr>
-      </thead>
-      <tbody id="padreTablaPasajeros">
-       
-      </tbody>
-    </table>
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered w-75">
+        <thead>
+          <tr class="table-dark">
+            <th>Identificacion</th>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Telefono</th>
+            <th>Correo</th>
+            <th>Fecha de nacimiento</th>
+            <th>Nacionalidad</th>
+            <th>opciones</th>
+          </tr>
+        </thead>
+        <tbody id="padreTablaPasajeros">
+         
+        </tbody>
+      </table>
+    </div>
   </center>
   <!-- Seccion Destinos -->
   <h2 class="text-center mb-5 mt-5" id="seccionRutas">Destinos</h2>
@@ -422,38 +420,38 @@
   <center>
     <form class="row g-3 needs-validation m-3" id="agregarDestino" novalidate>
       <div class="mt-5 col-md-4 position-relative">
-        <div class="form-outline">
+        <div class="form-outline text-start text-start">
+          <label for="nombreRuta" class="form-label"><b>Nombre de la ruta</b></label>
           <input type="text" class="form-control" id="nombreRuta" placeholder="Nombre de la ruta" required />
-          <label for="nombreRuta" class="form-label">Nombre de la ruta</label>
         </div>
       </div>
       <div class="mt-5 col-md-4 position-relative">
-        <div class="form-outline">
+        <div class="form-outline text-start">
+          <label for="nombrePersona" class="form-label"><b>ValorTiquete</b></label>
           <input type="number" class="form-control" id="valorTiquete" placeholder="ValorTiquete" required />
-          <label for="nombrePersona" class="form-label">ValorTiquete</label>
         </div>
       </div>
       <div class="mt-5 col-md-4 position-relative">
-        <div class="form-outline">
+        <div class="form-outline text-start">
+          <label for="ciudadOrigen" class="form-label"><b>Ciudad de origen</b></label>
           <input type="text" class="form-control" id="ciudadOrigen" placeholder="Ciudad de origen" required />
-          <label for="ciudadOrigen" class="form-label">Ciudad de origen</label>
         </div>
       </div>
       <div class="mt-5 col-md-6 position-relative">
-        <div class="form-outline">
+        <div class="form-outline text-start">
+          <label for="ciudadDestino" class="form-label"><b>Ciudad destino</b></label>
           <input type="text" class="form-control" id="ciudadDestino" placeholder="Ciudad destino" required />
-          <label for="ciudadDestino" class="form-label">Ciudad destino</label>
         </div>
       </div>
       <div class="mt-5 col-md-6 position-relative">
-        <div class="form-outline">
+        <div class="form-outline text-start">
+          <label for="puntosFide" class="form-label"><b>Puntos para fidelización</b></label>
           <input type="number" class="form-control" id="puntosFide" placeholder="Puntos para fidelización" required />
-          <label for="puntosFide" class="form-label">Puntos para fidelización</label>
         </div>
       </div>
       <div class="mt-3 pt-2">
-        <button class="btn btn-outline-success" type="submit">Agregar</button>
         <button class="btn btn-outline-success" type="button" id="listarRutas">Listar</button>
+        <button class="btn btn-outline-success" type="submit">Agregar</button>
       </div>
     </form>
   </center>
@@ -463,22 +461,24 @@
     <div class="text-end">
       <button class="btn btn-outline-dark rounded-circle mb-3 me-5 " id="cerrarTablaDestino">X</button>
     </div>
-    <table class="table table-striped table-bordered w-75">
-      <thead>
-        <tr class="table-dark">
-          <th>ID</th>
-          <th>Nombre de la ruta</th>
-          <th>Valor tiquete</th>
-          <th>Ciudad origen</th>
-          <th>Ciudad destino</th>
-          <th>Puntos fidelización</th>
-          <th>Eliminar</th>
-        </tr>
-      </thead>
-      <tbody id="padreTablaDestino">
-        
-      </tbody>
-    </table>
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered w-75">
+        <thead>
+          <tr class="table-dark">
+            <th>ID</th>
+            <th>Nombre de la ruta</th>
+            <th>Valor tiquete</th>
+            <th>Ciudad origen</th>
+            <th>Ciudad destino</th>
+            <th>Puntos fidelización</th>
+            <th>Eliminar</th>
+          </tr>
+        </thead>
+        <tbody id="padreTablaDestino">
+          
+        </tbody>
+      </table>
+    </div>
 
   <!-- Seccion compra tiquetes -->
   <h2 class="text-center mb-5 mt-5" id="seccionTiquetes">Compra de tiquetes</h2>
@@ -514,7 +514,7 @@
           <h1 class="modal-title fs-5" id="exampleModalLabel">Resumen de la compra</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
-        <div class="modal-body" id="contenidoCompra">
+        <div class="modal-body text-start" id="contenidoCompra">
           
         </div>
       </div>
@@ -525,18 +525,20 @@
   <h2 class="text-center mb-5 mt-5" id="seccionPuntos">Puntos fidelización</h2>
 
   <!-- Tabla puntos de fidelizacion -->
-  <table class="table table-striped table-bordered w-75 mb-5">
-    <thead>
-      <tr class="table-dark">
-        <th>Nombre</th>
-        <th>Apelldio</th>
-        <th>Puntos fidelización</th>
-      </tr>
-    </thead>
-    <tbody id="padreTablaFidelizacion">
-      
-    </tbody>
-  </table>
+  <div class="table-responsive">
+    <table class="table table-striped table-bordered w-75 mb-5">
+      <thead>
+        <tr class="table-dark">
+          <th>Nombre</th>
+          <th>Apelldio</th>
+          <th>Puntos fidelización</th>
+        </tr>
+      </thead>
+      <tbody id="padreTablaFidelizacion">
+        
+      </tbody>
+    </table>
+  </div>
 
   <!-- footer -->
   <footer class="text-center text-lg-start bg-light text-muted mt-5" id="footer">
@@ -616,6 +618,15 @@
       <a class="text-reset text-decoration-none fw-bold" href="#navbar">AirLink.com</a>
     </div>
   </footer>
+
+  <!-- Boton que lleva al navbar -->
+  <div class="fixed-bottom mb-5 m-lg-5 text-start">
+    <a class="btn btn-secondary rounded-circle" href="#navbar">
+      <span class="material-symbols-outlined fs-2">
+        home
+      </span>
+    </a>
+  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
