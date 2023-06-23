@@ -1,0 +1,33 @@
+body {
+    background-color: rgba(60, 43, 133, 0.281);
+} 
+
+
+.button {
+    background-color: black;
+    color: white;
+    height: 100px;
+    width: 100px
+}
+
+.button:hover{
+    background-color: rgb(153, 140, 140);
+}
+
+.calculadora{
+    width: 400px;
+}
+
+.pantalla{
+    height: 70px;
+    background-color: rgb(211, 210, 208);
+}
+
+.ac{
+    background-color: rgb(224, 106, 9);
+}
+
+.ac:hover{
+    background-color: rgb(206, 96, 7);
+}
+
