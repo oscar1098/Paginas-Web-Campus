@@ -6,9 +6,13 @@ let operacion = '';
 
 const resultado = () => {
     try {
-        pantallaR.textContent = eval(operacion);
-    }
+        if ( isNaN( eval(operacion) ) ){
+            pantallaR.textContent = '';
+        } else {
 
+            pantallaR.textContent = eval(operacion);
+        }
+    }
     catch {
         pantallaR.textContent = '';
         return;
@@ -19,25 +23,92 @@ botones.forEach(boton => {
 
     const operaciones = () => {
 
+        if ( boton.textContent == '^' ){
+            pantallaO.textContent += '^';
+            operacion += '**';
+            return;
+        }
+
+        if ( boton.textContent == 'In' ){
+            if ( pantallaO.textContent == '0'){
+                pantallaO.textContent = 'In(';
+                operacion = 'Math.log(';
+                return;
+            } else {
+                pantallaO.textContent += 'In(';
+                operacion += 'Math.log(';
+                return;
+            }
+        }
+
+        if ( boton.textContent == '√' ){
+            if ( pantallaO.textContent == '0'){
+                pantallaO.textContent = '√(';
+                operacion = 'Math.sqrt(';
+                return;
+            } else {
+                pantallaO.textContent += '√(';
+                operacion += 'Math.sqrt(';
+                return;
+            }
+        }
+
+        if ( boton.textContent == '%' ) {
+            pantallaO.textContent += '%';
+            operacion += '/100*';
+            resultado();
+            return;
+        }
+
         if ( boton.id == 'borrar' ){
-            console.log(operacion.length)
+
+            const ultimoCaracter = pantallaO.textContent[pantallaO.textContent.length -1];
+            console.log(ultimoCaracter);
+
+            if ( ultimoCaracter == '^' ){
+                operacion =  operacion.slice(0,operacion.length -2 );
+                pantallaO.textContent = pantallaO.textContent.slice(0,pantallaO.textContent.length -1 );
+                resultado();
+                return;
+            }
+
+            if ( ultimoCaracter == 'n' ){
+                operacion =  operacion.slice(0,operacion.length -8 );
+                pantallaO.textContent = pantallaO.textContent.slice(0,pantallaO.textContent.length -2 );
+                resultado();
+                return;
+            }
+
+            if ( ultimoCaracter == '√' ){
+                operacion =  operacion.slice(0,operacion.length -9 );
+                pantallaO.textContent = pantallaO.textContent.slice(0,pantallaO.textContent.length -1 );
+                resultado();
+                return;
+            }
+
+            if ( ultimoCaracter == '%' ){
+                operacion =  operacion.slice(0,operacion.length -5 );
+                pantallaO.textContent = pantallaO.textContent.slice(0,pantallaO.textContent.length -1 );
+                resultado();
+                return;
+            }
+
             operacion =  operacion.slice(0,operacion.length -1 );
-            pantallaO.textContent = operacion;
-            resultado()
-            // pantallaR.textContent = eval(operacion);
+            pantallaO.textContent = pantallaO.textContent.slice(0,pantallaO.textContent.length -1 );
+            resultado();
             return;
         }
 
         if ( boton.textContent == 'AC' ) {
-            pantallaO.textContent = '0';
+            pantallaO.textContent = '';
             operacion = '';
-            pantallaR.textContent = '0';
+            pantallaR.textContent = '';
             return;
         }
 
         if ( boton.textContent ==='x' ) { 
                 operacion += '*';
-                pantallaO.textContent = operacion;
+                pantallaO.textContent += 'x';
                 return 
             }
 
@@ -53,10 +124,12 @@ botones.forEach(boton => {
             }
         }
         
-        operacion += boton.textContent; 
-        pantallaO.textContent = operacion;
+        pantallaO.textContent += boton.textContent;
+        operacion += boton.textContent;
         resultado();
+        console.log(operacion);
     }
+
     
     boton.addEventListener('click',operaciones);
     

@@ -15,7 +15,11 @@ body {
 }
 
 .calculadora{
-    width: 400px;
+    width: 442px;
+    padding: 20px;
+    background-color: rgb(24, 16, 16);
+    border-radius: 10px;
+    border: solid 1px black;
 }
 
 .pantalla{
