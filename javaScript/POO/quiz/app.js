@@ -56,6 +56,7 @@ const resBEdit = document.getElementById('resBEdit');
 const resCEdit = document.getElementById('resCEdit');
 const correctaEdit = document.getElementById('correctaEdit');
 const mostrar = document.getElementById('mostar');
+const limpiQuiz = document.getElementById('limpiQuiz');
 
 const agregar = (e) => {
     e.preventDefault();
@@ -181,10 +182,6 @@ const revisar = (e) => {
           })
     }
 
-    enviarespuestas.classList.add('ocultar');
-    formulario.classList.remove('ocultar');
-    quices.limpiarQuiz();
-    listaQuices();
 }
 
 const mostarQuiz = () => {
@@ -192,9 +189,18 @@ const mostarQuiz = () => {
     formulario.classList.add('ocultar');
 }
 
+const limpiarPantallaQuiz = () =>{
+    enviarespuestas.classList.add('ocultar');
+    formulario.classList.remove('ocultar');
+    quices.limpiarQuiz();
+    listaQuices();
+
+}
+
 mostrar.addEventListener('click',mostarQuiz)
 formulario.addEventListener('submit',agregar);
 enviarespuestas.addEventListener('submit', revisar);
+limpiQuiz.addEventListener('click', limpiarPantallaQuiz)
 
 
 
