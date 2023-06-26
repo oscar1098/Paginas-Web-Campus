@@ -90,7 +90,11 @@ const listarQuices = () => {
                 <input type="radio" name="${controlador}"  value = 'C'>
                 <label for="radio">C. ${opcionC}</label>
             </div>
-        `
+            `
+            // <div class = 'text-start mt-5'>
+            //     <button type="button" data-bs-toggle="modal" data-bs-target='#modalEditar' class = 'btn btn-outline-warning me-3'  onclick="editar(${i})">Editar</button>
+            //     <button type="button" class = 'btn btn-outline-danger'  onclick="eliminar(${i})">Eliminar</button>
+            // </div>
         listaQuices.appendChild(itemsLista);
         controlador++
     }
