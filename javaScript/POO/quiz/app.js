@@ -30,6 +30,10 @@ class Quiz {
     eliminar (index){
         this.quices.splice(index,1);
     }
+
+    limpiarQuiz (){
+        this.quices = []
+    }
 }
 
 const quices =  new Quiz();
@@ -51,6 +55,7 @@ const resAEdit = document.getElementById('resAEdit');
 const resBEdit = document.getElementById('resBEdit');
 const resCEdit = document.getElementById('resCEdit');
 const correctaEdit = document.getElementById('correctaEdit');
+const mostrar = document.getElementById('mostar');
 
 const agregar = (e) => {
     e.preventDefault();
@@ -84,10 +89,6 @@ const listarQuices = () => {
             <div class = 'd-block'>
                 <input type="radio" name="${controlador}"  value = 'C'>
                 <label for="radio">C. ${opcionC}</label>
-            </div>
-            <div class = 'text-start mt-5'>
-                <button type="button" data-bs-toggle="modal" data-bs-target='#modalEditar' class = 'btn btn-outline-warning me-3'  onclick="editar(${i})">Editar</button>
-                <button type="button" class = 'btn btn-outline-danger'  onclick="eliminar(${i})">Eliminar</button>
             </div>
         `
         listaQuices.appendChild(itemsLista);
@@ -175,10 +176,19 @@ const revisar = (e) => {
             text: `Su puntaje fue ${correctas}/${nmroPreguntas}`,
           })
     }
-    
 
+    enviarespuestas.classList.add('ocultar');
+    formulario.classList.remove('ocultar');
+    quices.limpiarQuiz();
+    listaQuices();
 }
 
+const mostarQuiz = () => {
+    enviarespuestas.classList.remove('ocultar');
+    formulario.classList.add('ocultar');
+}
+
+mostrar.addEventListener('click',mostarQuiz)
 formulario.addEventListener('submit',agregar);
 enviarespuestas.addEventListener('submit', revisar);
 
