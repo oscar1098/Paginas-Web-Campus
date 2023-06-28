@@ -1,84 +1,43 @@
-let articulos = JSON.parse(localStorage.getItem('cartItems')) || [];
-console.log( typeof articulos);
-const agregar = document.getElementById('agregar');
-const articulo = document.getElementById('articulo');
-const precio = document.getElementById('precio');
-const vaciar = document.getElementById('vaciar');
-const listaArt = document.getElementById('listaArt');
-
-
-class Item {
-
-    constructor( nombre, precio ){
-        this.nombre = nombre;
-        this.precio = precio;
+class Articulo {
+    constructor(desc, precio) {
+      this.descripcion = desc;
+      this.precio = precio;
     }
-
-    crearArt () {
-
-        return {
-            nombre : this.nombre,
-            precio : this.precio
-        }
+  }
+  
+  class Carrito {
+    constructor() {
+      this.articulos = JSON.parse(localStorage.getItem('cartItems')) || [];
     }
-}
-
-class Carrito {
-
-
-    setArticulo(nombreLocalStorage,item) {
-        articulo.push(item);
-        localStorage.setItem(nombreLocalStorage, JSON.stringify(articulo));
+  
+    agregarAlCarrito() {
+      let item = document.getElementById("compraInput").value;
+      let precio = document.getElementById("precioInput").value;
+      let newArt = new Articulo(item, precio);
+      if (item && precio) {
+        this.articulos.push(newArt);
+        this.mostrarCarrito();
+        localStorage.setItem("cartItems", JSON.stringify(this.articulos));
+      }
     }
-
-    eliminarItem(i,nombreLocalStorage){
-        articulo.splice(i,1);
-        localStorage.setItem(nombreLocalStorage, JSON.stringify(articulo));
+  
+    mostrarCarrito() {
+      var cartItemsList = document.getElementById('cartItems');
+      cartItemsList.innerHTML = '';
+  
+      for (var i = 0; i < this.articulos.length; i++) {
+        var cartItem = document.createElement('li');
+        cartItem.textContent = this.articulos[i].descripcion + " - " + this.articulos[i].precio;
+        cartItemsList.appendChild(cartItem);
+      }
     }
-
-    vaciarArticulos (nombreLocalStorage) {
-        localStorage.removeItem('cartItems');
+  
+    vaciarCarrito() {
+      this.articulos = [];
+      this.mostrarCarrito();
+      localStorage.removeItem('cartItems');
     }
-}
-
-
-const carrito = new Carrito( articulos );
-
-const agregarArticulo = (e) => {
-
-    e.preventDefault();
-    const item = new Item( articulo.value, precio.value );
-    carrito.setArticulo('cartItems', item.crearArt());
-    mostratArticulos();
-    agregar.reset();
-    
-}
-
-const mostratArticulos =() => {
-    
-    listaArt.innerHTML = '';
-    for ( let i = 0; i < articulos.length; i++ ){
-    
-        const li = document.createElement('li');
-    
-        li.innerHTML = `
-            <p>${articulos[i].nombre}</p>
-            <p>${articulos[i].precio}</p>
-            <button class="btn btn-outline-danger" onclick="eliminarArt(i)">Eliminar</button>
-        `
-        listaArt.appendChild(li);
-    }
-}
-
-const limpiarLista = () => {
-    carrito.vaciarArticulos('cartItems');
-    console.log(articulos);
-    mostratArticulos();
-}
-
-
-mostratArticulos();
-agregar.addEventListener('submit', agregarArticulo )
-vaciar.addEventListener('click', limpiarLista);
-
-
+  }
+  
+  const carrito = new Carrito();
+  carrito.mostrarCarrito();
