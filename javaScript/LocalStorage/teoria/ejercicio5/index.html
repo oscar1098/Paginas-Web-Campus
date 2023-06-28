@@ -15,6 +15,8 @@
     // Obtener los elementos del carrito del Local Storage al cargar la página
     var cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
 
+    console.log(cartItems.length);
+
     function mostrarCarrito() {
       var cartItemsList = document.getElementById('cartItems');
       cartItemsList.innerHTML = '';
