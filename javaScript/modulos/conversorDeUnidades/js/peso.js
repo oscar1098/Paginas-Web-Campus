@@ -1,0 +1,1 @@
+export const convertirPeso = ( kg ) => (kg * 2.205 );
