@@ -23,17 +23,27 @@
       </div>
       <div class="col-md-6">
         <label for="precioArt">Precio articulos</label>
-        <input type="text" class="form-control" id="precioArt" required>
+        <input type="number" class="form-control" id="precioArt" required>
       </div>
       <center>
         <div class="col-md-3 flex mt-3">
-          <button type="submit" class="btn btn-outline-success">Agregar</button>
+          <button type="submit" class="btn btn-outline-success me-2">Agregar</button>
+          <button type="button" class="btn btn-outline-success" id="vaciar">Vaciar carrito</button>
         </div>
       </center>
     </div>
   </form>
 
-  <ul class="list-group lista" id="listaQuices"></ul>
+  <table class="table table-striped" >
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Precio</th>
+        <th>Eliminar</th>
+      </tr>
+    </thead>
+    <tbody id="tabla"></tbody>
+  </table>
   
   <center>
     <button type="button" class="btn btn-outline-warning ocultar" id="totalcompra">Total Compra</button>
