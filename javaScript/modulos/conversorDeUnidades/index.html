@@ -16,54 +16,77 @@
 
     <center>
 
-        <div class="row mt-5 w-75">
+        <div class="row mt-5">
             <div class="col-2">
-                <p>Metros a Pies</p>
+                <p>Masa</p>
+            </div>
+            <div class="col-1">
+                <select class="form-select" id="selecM">
+                    <option>Seleccione</option>
+                </select>
+            </div>
+            <div class="col-1">
+                <select class="form-select" id="selecMC">
+    
+                </select>
             </div>
             <div class="col-3">
-                <input type="text" class="form-control col-3" id="metros" placeholder="metros">
+                <input type="text" class="form-control col-3" id="masaInput">
             </div>
-            <div class="col-2 text-center">
-                <p class="mt-1">=</p>
+            <div class="col-1">
+                <button class="btn btn-outline-success" id="masaCalcu">Calcular</button>
             </div>
             <div class="col-3">
-                <input type="text" class="form-control col-3" placeholder="pies" id="pies" readonly>
+                <input type="text" class="form-control col-3" id="masaResul" readonly>
             </div>
-            <div class="col-2">
-                <button class="btn btn-outline-success" id="distancia">Calcular</button>
-            </div>
+          
+            <div class="col-12 mt-5"></div>
 
             <div class="col-2">
-                <p>Celsius a Fahrenheit</p>
+                <p>Distancia</p>
             </div>
+            <div class="col-1">
+                <select class="form-select" id="selecD">
+                    <option>Seleccione</option>
+                </select>
+            </div>
+            <div class="col-1">
+                <select class="form-select" id="selecDC">
     
-            <div class="col-3">
-                <input type="text" class="form-control col-3" placeholder="celius" id="celius">
-            </div>
-            <div class="col-2 text-center">
-                <p class="mt-1">=</p>
+                </select>
             </div>
             <div class="col-3">
-                <input type="text" class="form-control col-3" placeholder="fahrenheit" id="fahrenheit" readonly>
+                <input type="text" class="form-control col-3" id="distanciaInput">
             </div>
+            <div class="col-1">
+                <button class="btn btn-outline-success" id="distanciaCalcu">Calcular</button>
+            </div>
+            <div class="col-3">
+                <input type="text" class="form-control col-3" id="distanciaResul" readonly>
+            </div>
+            <div class="col-12 mt-5"></div>
+
             <div class="col-2">
-                <button class="btn btn-outline-success" id="temperatura">Calcular</button>
+                <p>Temperatura</p>
             </div>
+            <div class="col-1">
+                <select class="form-select" id="selecT">
+                    <option>Seleccione</option>
+                </select>
+            </div>
+            <div class="col-1">
+                <select class="form-select" id="selecTC">
     
-            <div class="col-2">
-                <p>kilogramos a libras</p>
+                </select>
             </div>
             <div class="col-3">
-                <input type="text" class="form-control col-3" placeholder="kilogramos" id="kilogramos" >
+                <input type="text" class="form-control col-3" id="TemperaturaInput">
             </div>
-            <div class="col-2 text-center">
-                <p class="mt-1">=</p>
+            <div class="col-1">
+                <button class="btn btn-outline-success" id="temperaturaCalcu">Calcular</button>
             </div>
             <div class="col-3">
-                <input type="text" class="form-control col-3" placeholder="libras" id="libras" readonly>
-            </div>
-            <div class="col-2">
-                <button class="btn btn-outline-success" id="peso">Calcular</button>
+                <input type="text" class="form-control col-3" id="temperaturaResul" readonly>
             </div>
         </div>
     </center>
